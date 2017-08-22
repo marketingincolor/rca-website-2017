@@ -15,6 +15,7 @@ if ( !empty($operations_team)) {
 	//loop through operations team and count
 	$last = count($operations_team);
 	$count = 0;
+	$end = '';
 	foreach($operations_team as $team_member) {
 
 		// Add classes depending on count

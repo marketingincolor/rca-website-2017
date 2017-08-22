@@ -25,7 +25,7 @@
 
 
 				<!-- board of directors -->
-				<div class="row">
+				<div class="row staff-block-area">
 					<div class="small-12 columns text-center">
 						<div class="team-wrapper">
 							<div class="team-wrapper-title">
@@ -35,11 +35,26 @@
 						<?php get_template_part('template-parts/query', 'board-directors-team'); ?>
 					</div>
 				</div>
-
 				<!-- end board of directors -->
 
+
+				<!-- executive leadership team -->
+				<div class="row staff-block-area">
+					<div class="small-12 columns text-center">
+						<div class="team-wrapper">
+							<div class="team-wrapper-title">
+								<h2>Executive Leadership Team</h2>
+							</div>
+						</div>
+						<?php get_template_part('template-parts/query', 'executive-leadership-team'); ?>
+					</div>
+				</div>				
+				<!-- end executive leadership team -->
+
+				<div class="staff-seperator"></div>
+
 				<!-- operations team-->
-				<div class="row">
+				<div class="row staff-block-area">
 					<div class="small-12 columns text-center">
 						<div class="team-wrapper">
 							<div class="team-wrapper-title">
@@ -50,6 +65,8 @@
 					</div>
 				</div>
 				<!-- end operations team -->
+
+				<div class="staff-seperator"></div>
 
 
 			</div><!-- .entry-content -->
