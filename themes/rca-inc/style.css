@@ -1045,7 +1045,6 @@ footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 .footer-social-link { 
     line-height: 1;
     position: relative;
-    top: -16px;
     padding: 0rem 1rem;
     display: inline-block;
 }
