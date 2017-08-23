@@ -27,8 +27,11 @@ if ( !empty($operations_team)) {
 		}
 
 		echo '<div class="small-12 ' . $additionalClass .' large-2 columns ' . $end .'">';
-		$member_info = get_userdata($team_member[0]);
-		$profile_picture = get_field('profile_picture', $member_info);
+		$member_info = get_userdata($team_member);
+		$avatar = get_wp_user_avatar($member_info->ID);
+		echo $avatar;
+
+		//$profile_picture = get_field('profile_picture', $member_info);
 		if( !empty($profile_picture)) : 
 			echo '<div class="profile-picture"><img src="' . $profile_picture['url'] . '" alt="Profile Picture" /></div>'; 
 		endif;

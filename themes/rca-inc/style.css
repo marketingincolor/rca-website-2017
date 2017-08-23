@@ -1419,3 +1419,4 @@ button#learn-more-btn { font-weight: bold; }
 .team-wrapper-title h2 { font-family: 'Roboto', sans-serif; font-size: 1.375rem; color: #2b2b2b; padding: 5rem 0rem;}
 .staff-block-area { padding-bottom: 5rem; }
 .staff-seperator { border: 2px solid #c9c3ba; width: 50%; margin: 0 auto;}
+.staff-name { font-family: 'Lora'; font-weight: bold; font-style: italic; color: #2b2b2b; }
