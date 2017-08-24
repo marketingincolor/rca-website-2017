@@ -947,6 +947,8 @@ button {
 	width: 100%;
 	padding: 1rem;
 }
+
+button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; }
 .pad-tb-2 { padding-top:2rem; padding-bottom:2rem; }
 .read-more { color: #c4612b; text-decoration: underline; }
 
@@ -1122,6 +1124,7 @@ button.hamburger-menu {
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#top-menu { background: #eee; }
 .top-bar { padding: 0px; }
 .top-bar, .top-bar ul { background-color: #f8f7f5; }
 .top-bar ul li ul { background-color: color: #fff; }
@@ -1295,6 +1298,140 @@ button#learn-more-btn { font-weight: bold; }
 
 
 
+
+
+.no-js #menu-section {
+  display: none;
+}
+
+#main { padding: 0rem 0rem 4.5rem; }
+
+.mega-menu {
+	.button {
+		background: transparent;
+		color: #999;
+	}
+	.categories {
+		@include side-nav;
+		li a {
+			color: #999;
+			&:hover {
+				color: black;
+			}
+		}
+	}
+	.contact {
+		@include side-nav;
+	}
+	i {
+		padding-right: .5rem;
+	}
+}
+
+/*MEGAAAAAAAA MEU*/
+
+#mega-menu-container h3 { font-size: 1.18rem; font-weight: bold; }
+#mega-menu-container > li > a { margin: 1.25rem 0rem; }
+#mega-menu-container .menu li a { color: #2b2b2b; padding: .25rem; }
+#mega-menu-container .menu li a:hover { color: #c4612b; text-decoration: underline; }
+#mega-menu-container ul {  }
+#mega-menu-container {
+  background: #eee;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu > li {
+  display: inline-block;
+}
+
+.is-dropdown-submenu-parent.mega-menu {
+  position: static;
+}
+
+.mega-menu > .is-dropdown-submenu { 
+	padding: 3.175rem;
+}
+
+ .sub-menu li .sub-menu {
+        display:block !important;
+        margin-left:0px;
+ }
+
+.is-submenu-item > div > h3 { font-size: 1.18rem; }
+
+.mega-menu .is-dropdown-submenu {
+  left: 0;
+  right: 0;
+  top: auto;
+  position: absolute;
+  background-color: #eee;
+}
+
+ li:hover .sub-menu {
+        display:block !important;
+        margin-left:0px;
+} 
+
+#mega-menu-container ul { margin-left: 0px; }
+
+.share-section-btn-color { 
+    color: #fff;
+    background-color: #c9c3ba;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 3.5rem 5px;
+    width: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+#share p { color: #c9c3ba; padding-right: 1.2rem; }
+
+#breadcrumbs { margin: 3.5rem 0px; color: #c9c3ba; }
+#breadcrumbs a { color: #c9c3ba; }
+
+#featured-img-wrapper { position:relative;min-height: 175px; }
+#featured-img-wrapper #featured-img { background-size: cover; min-height: 175px;  }
+#featured-img-wrapper #featured-img .featured-img-title h1 { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #fff; }
+
+
+/*--------------------------------------------------------------
+# Page - Our Staff
+--------------------------------------------------------------*/
+.staff-block-area {  }
+.staff-block-area h2 { font-family: 'Roboto', sans-serif; font-size: 1.375rem; color: #2b2b2b; padding: 5rem 0rem; font-weight: bold; }
+.staff-block-area h3 { font-size: 1.125rem; font-family: 'Roboto', sans-serif; color: #9d938b; padding: 3.75rem 0rem; }
+.staff-seperator { border: 2px solid #c9c3ba; width: 30%; margin: 0 auto; margin-top: 5rem; }
+.staff-name { font-family: 'Lora'; font-weight: bold; font-style: italic; color: #2b2b2b; }
+.staff-wrapper { display:inline-block; margin: 5px 0px; min-height: 200px; }
+.staff-wrapper img { padding-bottom: 2rem; }
+.staff-wrapper .staff-position { padding-top: .5rem; padding-bottom: 1.5rem; line-height: 1.25rem; }
+
+/*--------------------------------------------------------------
+# Template - Individual Staff Pages
+--------------------------------------------------------------*/
+
+.individual-staff-information { display:inline-block; }
+#individual-email {  }
+#individual-staff-wrapper img { margin-bottom: 1rem; margin-right: 2rem; }
+#individual-staff-wrapper h1 { font-size: 2.3125rem; }
+#individual-staff-wrapper h2 { font-size: 1.375rem; font-weight: bold; }
+#individual-staff-wrapper #individual-email { 
+	color: #c4612b; 
+	padding: .5rem 0rem;
+	margin: 1rem 0rem;
+	display: flow-root;
+}
+
+.staff-wrapper { width: 100%; }
+.staff-name { padding-top: 1.5rem; }
+.staff-position { padding: 1rem 0rem; }
+.staff-position { font-size: .9rem; }
+
+.no-avatar .staff-name { padding-top: 0rem; }
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 	.accordian-menu > li {    
@@ -1315,7 +1452,10 @@ button#learn-more-btn { font-weight: bold; }
   .error-404 button {
   	float: left;
   }
-
+	#individual-staff-wrapper #individual-email { 
+  		border-top: 2px solid #c9c3ba; 
+		border-bottom: 2px solid #c9c3ba;
+	}
 }
 
 /* Medium only */
@@ -1341,82 +1481,4 @@ button#learn-more-btn { font-weight: bold; }
 	.top-bar, .top-bar ul { background-color: #f8f7f5; position: absolute; }
 }
 
-.no-js #menu-section {
-  display: none;
-}
-
-#main { padding: 4.5rem 0rem; }
-
-.mega-menu {
-	.button {
-		background: transparent;
-		color: #999;
-	}
-	.categories {
-		@include side-nav;
-		li a {
-			color: #999;
-			&:hover {
-				color: black;
-			}
-		}
-	}
-	.contact {
-		@include side-nav;
-	}
-	i {
-		padding-right: .5rem;
-	}
-}
-
-/*MEGAAAAAAAA MEU*/
-#mega-menu-container {
-  background: #eee;
-}
-
-.menu {
-  position: relative;
-}
-
-.menu > li {
-  display: inline-block;
-}
-
-.is-dropdown-submenu-parent.mega-menu {
-  position: static;
-}
-
-.mega-menu .is-dropdown-submenu {
-  left: 0;
-  right: 0;
-  top: auto;
-  position: absolute;
-}
-
-.share-section-btn-color { 
-    color: #fff;
-    background-color: #c9c3ba;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 3.5rem 5px;
-    width: 35px;
-    text-align: center;
-    cursor: pointer;
-}
-#share p { color: #c9c3ba; padding-right: 1.2rem; }
-
-#breadcrumbs { margin: 3.5rem 0px; color: #c9c3ba; }
-#breadcrumbs a { color: #c9c3ba; }
-
-#featured-img-wrapper { position:relative;min-height: 175px; }
-#featured-img-wrapper #featured-img { background-size: cover; min-height: 175px;  }
-#featured-img-wrapper #featured-img .featured-img-title h1 { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #fff; }
-
-
-/*--------------------------------------------------------------
-# Page - Our Staff
---------------------------------------------------------------*/
-.team-wrapper-title h2 { font-family: 'Roboto', sans-serif; font-size: 1.375rem; color: #2b2b2b; padding: 5rem 0rem;}
-.staff-block-area { padding-bottom: 5rem; }
-.staff-seperator { border: 2px solid #c9c3ba; width: 50%; margin: 0 auto;}
-.staff-name { font-family: 'Lora'; font-weight: bold; font-style: italic; color: #2b2b2b; }
+.is-dropdown-submenu>li, .is-submenu-item div div ul li { list-style: none; display:block; }

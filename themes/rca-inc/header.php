@@ -87,8 +87,9 @@
 			</div>
 		</div>
  -->
- <div class="row expanded">
-	 <div class="large-10 large-offset-1 columns">
+ <div id="top-menu">
+ <div id="top-menu" class="row">
+	 <div class="large-12 columns">
 <!-- 	  <ul id="mega-menu-container" class="menu" data-dropdown-menu data-click-open="true" data-disable-hover="true">
 	    <li>
 	      <a href="#">University</a>
@@ -113,106 +114,71 @@
 		// ) );
 
 	?>
-<div class="row">
 
-  <ul id="mega-menu-container" class="menu" data-dropdown-menu data-click-open="true" data-disable-hover="true">
-    <li>
-      <a href="#">University</a>
-    </li>
+  <ul id="mega-menu-container" class="menu show-for-large" data-dropdown-menu data-click-open="true" data-disable-hover="true">
     <li class="mega-menu">
-      <a href="#">Programs</a>
-      <ul class="menu">
-        <li>
-          <div class="medium-4 column">
-            <h3>Undergraduate</h3>
-            <ul>
-              <li>
-                <a href="#">Admissions</a>
-              </li>
-              <li>
-                <a href="#">Academics</a>
-              </li>
-              <li>
-                <a href="#">Fields of Study</a>
-              </li>
-              <li>
-                <a href="#">Fees and Finance</a>
-              </li>
-              <li>
-                <a href="#">Useful Contacts</a>
-              </li>
-            </ul>
+        <a href="#">Medical Devices</a>
+        <ul class="menu">
+            <li>
+
+          <div class="row">
+            <div class="small-8 columns">
+              
+                <div class="medium-6 columns">
+                    <h3>Regulatory Affairs</h3>
+                    <?php
+
+                    wp_nav_menu( 
+                      array(
+                        'menu' => 'Regulatory Affairs', 
+                        'menu_class' => 'menu',
+                      )
+                    ); ?>
+                </div>
+                    
+
+                <div class="medium-6 columns">
+                    <h3>Quality Services</h3>
+                    <ul></ul>
+                </div>
+
+
+                <div class="medium-6 columns">
+                    <h3>Compliance Assurance</h3>
+                    <?php wp_nav_menu( array('menu' => 'Compliance Assurance' )); ?>
+                </div>
+
+                <div class="medium-6 column end">
+                    <h3>Remediation Strategy and Support</h3>
+                    <?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support' )); ?>
+                </div>
+
+            </div>
+            <div class="small-4 columns">
+              <div class="medium-12 column">
+                <h3>Strategic Consulting</h3>
+                <?php wp_nav_menu( array('menu' => 'Strategic Consulting' )); ?>
+              </div>
+            </div>
+
           </div>
-          <!--end of .column-->
-          <div class="medium-4 column">
-            <h3>Graduate</h3>
-            <ul>
-              <li>
-                <a href="#">Admissions</a>
-              </li>
-              <li>
-                <a href="#">Academics</a>
-              </li>
-              <li>
-                <a href="#">Fields of Study</a>
-              </li>
-              <li>
-                <a href="#">Fees and Finance</a>
-              </li>
-            </ul>
-          </div>
-          <!--end of .column-->
-          <div class="medium-4 column">
-            <h3>Online Learning</h3>
-            <ul>
-              <li>
-                <a href="#">Why e-learning?</a
-                    </li>
-                    <li>
-                      <a href="#">Studies</a>
-              </li>
-              <li>
-                <a href="#">Date & Deadlines</a>
-              </li>
-              <li>
-                <a href="#">Fees and Finance</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <!--end of .column-->
-          <div class="medium-4 column">
-            <h3>Read</h3>
-            <a href="#" class="intro">
-              <img src="https://unsplash.it/400/280?image=532" />
-            </a>
-          </div>
-          <!--end of .column-->
-          <div class="medium-4 column">
-            <h3>Build</h3>
-            <a href="#" class="intro">
-              <img src="https://unsplash.it/400/280?image=534" />
-            </a>
-          </div>
-          <!--end of .column-->
-          <div class="medium-4 column">
-            <h3>Enjoy</h3>
-            <a href="#" class="intro">
-              <img src="https://unsplash.it/400/280?image=452" />
-            </a>
-          </div>
-          <!--end of .column-->
+
+
         </li>
       </ul>
-      <li>
-        <a href="#">Student Life</a>
+    </li>
+      <a href="#">Pharmaceutical</a>
+      <li><a href="#">Additional Services</a></li>
+
+      <a href="#">About</a>
+      <li><a href="#">News</a>
       </li>
+      <li><a href="">Contact</a></li>
+    </li>
+
   </ul>	 	
-	 </div>
 
-
+</div>
 </div>
 		<!-- SECONDARY NAV ON DESKTOP -->
 		<div class="row expanded show-for-large">

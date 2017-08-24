@@ -284,6 +284,7 @@ add_theme_support( 'post-thumbnails' );
 
 function rca_theme_img_sizes() {
   add_image_size('banner-img', 1430, 175 );
+  add_image_size('staff_profile_picture', 360, 380 );
 }
 
 add_action( 'after_setup_theme', 'rca_theme_img_sizes' );
@@ -642,3 +643,79 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
     remove_filter("wp_nav_menu_objects", "add_column_number");
     return $nav_menu;
 });
+
+/* ------------------------------------------------------------------------ *
+* Page - About > Our People
+* ------------------------------------------------------------------------ */
+
+/**
+ * Author : Doe
+ * Retrievs Team Members on About > Our People Page
+ * @param  string $role_type used for gettings users under each category
+ */
+function get_team_members($role_type) {
+
+  $args = array(
+    'role' => $role_type,
+    'fields' => 'ID'
+  );
+
+  $team_query = new WP_User_Query( $args );
+  $team_members = $team_query->get_results();
+
+
+  if ( !empty($team_members)) {
+
+    $last = count($team_members);
+    $end = '';
+
+    // If we have team members count and loop through them...
+    for ( $count = 0; $count < $last; $count++ ) {
+    // foreach($team_members as $team_member) {
+      $member_info = get_userdata($team_members[$count]);
+      $member_url = $member_info->user_url;
+      //var_dump($member_info);
+      $first_name = $member_info->first_name;
+      $last_name = $member_info->last_name;
+      $avatar = get_wp_user_avatar($member_info->ID);
+
+      // Add classes depending on count
+      // Find the longest position and adjust height accordingly.
+      if ( $count == 0 || ($count + 1)%3 == 1 ){
+        $additionalClass = 'large-offset-3';
+      }
+      if ( $count == ($last - 1)) {
+        $end = 'end';
+      }
+
+      echo '<div class="small-12 ' . $additionalClass .' large-2 columns ' . $end .'">';
+
+      $position = get_field('position', $member_info);
+
+
+      if( !empty($avatar)) : 
+        echo $avatar;
+      endif;
+      echo '<div class="staff-wrapper">';
+
+      if ( !empty($first_name) && !empty($last_name) ) {
+        echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
+      }
+
+      if ( !empty($position) ) {
+        echo '<div class="staff-position">' . $position . '</div>';
+      }
+
+      echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
+      echo '</div>';
+      echo '</div>';
+
+
+      $additionalClass = '';
+    }
+
+  }
+  
+  else { echo 'No Team Members Found'; }
+}
+

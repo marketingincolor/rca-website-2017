@@ -1,5 +1,4 @@
 <?php
-/* Template Name: Staff Page */
 
 get_header(); ?>
 	
