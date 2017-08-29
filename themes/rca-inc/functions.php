@@ -357,7 +357,7 @@ register_nav_menus( array(
 
 function rca_top_slider($atts, $content = null) {
     extract(shortcode_atts(array(
-        'category' => 'Uncategoryzed'
+        'category' => 'Uncategorized'
                     ), $atts));
 
     $data_attr = "";
@@ -415,7 +415,6 @@ function rca_top_slider($atts, $content = null) {
             $img_overlay .= '<div class="owl-carousel-item-imgcontent">' . wpautop($slide_content) . '</div>';
             $img_overlay .= '</div>';
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
-
             $result .= '</div>';
         } else {
             $result .= '<div class="owl-carousel-item-text">' . get_the_content() . '</div>';

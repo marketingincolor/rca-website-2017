@@ -83,11 +83,6 @@
 		</script>
 		
 
-		<script>
-			jQuery(function() {
-			  jQuery(document).foundation();
-			});
-		</script>
 
 		<script>
 			jQuery(document).ready(function($) {
@@ -103,7 +98,13 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/js/foundation.js"></script>
 <!-- Slick Sliders -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/plugins/foundation.dropdown.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/js/rca-sliders.js'; ?>"></script>
+		<script>
+			jQuery(function() {
+			  jQuery(document).foundation();
+			});
+		</script>
 <!-- /Slick Sliders -->
 
 </body>

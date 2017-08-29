@@ -115,65 +115,62 @@
 
 	?>
 
-  <ul id="mega-menu-container" class="menu show-for-large" data-dropdown-menu data-click-open="true" data-disable-hover="true">
+  <ul id="mega-menu-container" class="dropdown menu show-for-large" data-dropdown-menu>
     <li class="mega-menu">
         <a href="#">Medical Devices</a>
         <ul class="menu">
+
             <li>
+	          <div class="row">
+	            <div class="small-8 columns">
+	              
+	                <div class="medium-6 columns">
+	                    <h3>Regulatory Affairs</h3>
+	                    <?php
 
-          <div class="row">
-            <div class="small-8 columns">
-              
-                <div class="medium-6 columns">
-                    <h3>Regulatory Affairs</h3>
-                    <?php
+	                    wp_nav_menu( 
+	                      array(
+	                        'menu' => 'Regulatory Affairs', 
+	                        'menu_class' => 'menu',
+	                      )
+	                    ); ?>
+	                </div>
 
-                    wp_nav_menu( 
-                      array(
-                        'menu' => 'Regulatory Affairs', 
-                        'menu_class' => 'menu',
-                      )
-                    ); ?>
-                </div>
-                    
+	                <div class="medium-6 columns">
+	                    <h3>Quality Services</h3>
+	                    <ul></ul>
+	                </div>
 
-                <div class="medium-6 columns">
-                    <h3>Quality Services</h3>
-                    <ul></ul>
-                </div>
+	                <div class="medium-6 columns">
+	                    <h3>Compliance Assurance</h3>
+	                    <?php wp_nav_menu( array('menu' => 'Compliance Assurance' )); ?>
+	                </div>
 
+	                <div class="medium-6 column end">
+	                    <h3>Remediation Strategy and Support</h3>
+	                    <?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support' )); ?>
+	                </div>
 
-                <div class="medium-6 columns">
-                    <h3>Compliance Assurance</h3>
-                    <?php wp_nav_menu( array('menu' => 'Compliance Assurance' )); ?>
-                </div>
+	            </div>
+	            <div class="small-4 columns">
+					<div class="medium-12 column">
+						<h3>Strategic Consulting</h3>
+						<?php wp_nav_menu( array('menu' => 'Strategic Consulting' )); ?>
+					</div>
+	            </div>
 
-                <div class="medium-6 column end">
-                    <h3>Remediation Strategy and Support</h3>
-                    <?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support' )); ?>
-                </div>
+	          </div>
 
-            </div>
-            <div class="small-4 columns">
-              <div class="medium-12 column">
-                <h3>Strategic Consulting</h3>
-                <?php wp_nav_menu( array('menu' => 'Strategic Consulting' )); ?>
-              </div>
-            </div>
-
-          </div>
-
-
-        </li>
+       		</li>
       </ul>
     </li>
-      <a href="#">Pharmaceutical</a>
+      <li><a href="#">Pharmaceutical</a></li>
       <li><a href="#">Additional Services</a></li>
 
-      <a href="#">About</a>
+      <li><a href="#">About</a></li>
       <li><a href="#">News</a>
       </li>
-      <li><a href="">Contact</a></li>
+      <li class="contact-menu-item"><a href=""><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
     </li>
 
   </ul>	 	
