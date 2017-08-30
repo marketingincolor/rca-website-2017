@@ -66,6 +66,7 @@
 					get_field('pharmaceutical_link'),
 					get_field('additional_services_link')
 				);
+				echo '<div class="small-10 small-offset-1 columns">';
 
 				for($i=0;$i<3;$i++) {
 
@@ -77,13 +78,14 @@
 						$additional_class = '';
 					}
 
-					echo '<div class="small-10 small-offset-1 medium-4 medium-offset-0 ' . $additional_class . ' columns">';
+					echo '<div class="small-12 medium-4 ' . $additional_class . ' columns">';
 					echo '<img src="' . $img_array[$i]['url'] . '" />';
 					echo '<h4>' . $title_array[$i] . '</h4>';
 					echo '<p>' . $content_array[$i] . '</p>';
 					echo '<a href="'.$button_array[$i].'"><button>Learn More</button></a>';
 					echo '</div>';
 				}
+				echo '</div>';
 				?>
 
 		</div>
@@ -104,11 +106,11 @@
 		<!-- end mobile cta -->
 
 		<!-- desktop cta -->
-		<div class="row text-center show-for-medium" data-equalizer>
-			<div class="medium-7 medium-offset-1 columns" data-equalizer-watch>
+		<div class="row text-center medium-text-left show-for-medium" data-equalizer>
+			<div class="medium-6 medium-offset-2 columns" data-equalizer-watch>
 				<h3>Sign up for our Free Combination Products Webinar</h3><br />
 			</div>
-			<div class="medium-3 columns end relative" data-equalizer-watch>
+			<div class="medium-2 columns end relative" data-equalizer-watch>
 				<button id="learn-more-btn">Sign Up Here</button>
 			</div>
 		</div>
@@ -120,13 +122,21 @@
 		<div id="all-case-studies">
 			<!-- CASE STUDIES FIRST LOOP-->
 			<div id="case-studies" class="row" style="padding-bottom: 0em;">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
 					<h1 class="text-center">Case Studies</h1>
 					<?php
 
 					   $args = array(
-					      'post_type' => 'case_study',
-					      'posts_per_page' => 1
+					      'post_type' => 'items',
+					      'posts_per_page' => 1,
+					      'tax_query' => array(
+							array(
+								'taxonomy' => 'expertise',
+								'field'    => 'slug',
+								'terms'    => 'case-studies',
+							),
+						),
+
 					   );
 
 						$case_studies = new WP_Query($args);
@@ -152,16 +162,23 @@
 
 			<!-- CASE STUDIES SECOND LOOP -->
 			<div class="row">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
 					<div class="row">
 					
 							<?php
 
-							   $args = array(
-							      'post_type' => 'case_study',
-							      'posts_per_page' => 2,
-							      'offset' => 1
-							   );
+							   	$args = array(
+									'post_type' => 'items',
+									'posts_per_page' => 2,
+									'offset' => 1,
+									  'tax_query' => array(
+										array(
+											'taxonomy' => 'expertise',
+											'field'    => 'slug',
+											'terms'    => 'case-studies',
+										),
+									)
+							   	);
 
 								$case_studies = new WP_Query($args);
 								if($case_studies ->have_posts()) : 
@@ -189,8 +206,8 @@
 				</div>
 				<!-- CASE STUDIES SECOND LOOP -->
 				<div class="row">
-					<div class="small-10 small-offset-1 medium-4 medium-offset-4 large-2 large-offset-5 columns">
-						<button class="orange-btn">View All Case Studies</button>
+					<div class="small-10 small-offset-1 columns">
+						<button class="home-cs-orange-btn">View All Case Studies</button>
 					</div>
 				</div>
 			</div>
@@ -213,7 +230,7 @@
 					<h3>News</h3>
 				</div>
 			</div>
-			<div class="row text-center">
+			<div id="news-snippets-wrapper" class="row text-center">
 					
 					<?php
 						wp_reset_postdata();

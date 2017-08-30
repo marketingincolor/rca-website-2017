@@ -114,7 +114,9 @@ dfn {
 h1 {
 	color: #c4612b;
 	font-size: 2.25rem;
-	font-family: 'Lora';
+	font-family: 'Lora', sans-serif;
+	font-weight: bold;
+	font-style: italic;
 }
 
 mark {
@@ -1011,15 +1013,18 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; }
 
 
 /*Front Page - News Section*/
+#news-container div div div h3 { font-family: 'Lora', sans-serif; }
 #news-section { color: black; position:relative; }
 .news-slider-overlay h1,
 .news-slider-overlay p { color:#ffffff; }
+#news-snippets-wrapper { padding: 2rem 0rem; }
+#news-snippets-wrapper div:not(:last-child) { border-right: 1px solid #fff; }
 
 
 /* Front Page - Case Studies */
 .individual-case-study {
     border-left: 10px solid #c4612b;
-    padding: 0rem 2rem;
+    padding: 0rem 0rem 0 2rem;
 }
 
 #all-case-studies { padding: 4.375rem 0rem; }
@@ -1318,13 +1323,16 @@ button#learn-more-btn { font-weight: bold; }
 #mega-menu-container > li:nth-child(5) a { border-right: none; }
 
 #mega-menu-container h3 { font-size: 1.18rem; font-weight: bold; }
+#mega-menu-container .is-active a { color: #c4612b; } 
+#mega-menu-container li a:hover { color: #c4612b; }
+#mega-menu-container li:last-child a:hover { color: #fff; }
 #mega-menu-container > li { width: 16%; }
 #mega-menu-container > li > a { 
 	text-align: center;
 	margin: 1.25rem 0rem; 
 	font-weight: bold;
 	color: #9d938b;
-    border-right: 1px solid black;
+	border-right: 2px solid #c9c3ba;
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
@@ -1373,7 +1381,7 @@ button#learn-more-btn { font-weight: bold; }
         margin-left:0px;
 } 
 
-#mega-menu-container ul { margin-left: 0px; }
+#mega-menu-container ul { margin-left: 0px; border: none; }
 
 .share-section-btn-color { 
     color: #fff;
@@ -1463,7 +1471,7 @@ button#learn-more-btn { font-weight: bold; }
 @media screen and (min-width: 64em) {
 	.title-bar { color: ; }
 	.top-bar .menu li a { width: 200px; text-align: center; }
-	.site-branding { padding: 2.8rem; }
+	.site-branding { padding: 2.8rem; background-color: #ffffff; }
 	.menu.large-horizontal>li { position: relative; }
 	.top-bar ul li .is-active {
 		position: absolute;
@@ -1487,3 +1495,88 @@ button#learn-more-btn { font-weight: bold; }
 #front-page-services h4 { padding: 1.5rem 0rem; }
 #front-page-services p { margin-bottom: 2rem; }
 #front-page-services button { width: auto; font-weight:bold; padding: .5rem 2rem; }
+
+.owl-pagination { padding-top: 2rem; }
+
+#secondary-menu { background-color: #9d938a; color: #fff; }
+.secondary-menu div { display: inline-block; }
+
+#menu-secondary-menu li a { color: #fff;  }
+#menu-secondary-menu li a:visited { color: #fff; }
+
+/*case study section button overwrites normal button*/
+button.home-cs-orange-btn {
+	font-weight: bold !important;
+	width: auto !important;
+	margin: 0 auto !important;
+	display: block !important;
+	text-align: center !important;
+}
+
+.cat-image { 
+    display: inline-block;
+    border: 1px solid white;
+    padding: 0px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.cat-image img { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.secondary-menu-item-wrapper { display: inline-block; width: 20%; }
+.secondary-menu-item-wrapper li { 
+	width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+	padding: 0rem.5rem;
+    line-height: 1rem;
+    color: #ffffff;
+ }
+
+/*hide standard search button*/
+ .search-submit { display: none; }
+
+ #secondary-menu input[type="search"] { 
+ 	color: #9d938b; 
+ 	background-color: #f8f7f5; 
+ 	border-radius: 0px; 
+ 	border: 0px; 
+ 	box-shadow: none; 
+ 	margin-bottom: 0px;
+ 	padding: 0rem 0rem 0rem 1rem;
+ 	font-family: 'Lora', serif;
+ 	font-style: italic;
+ }
+
+ #search-icon {     
+ 	position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translateY(-50%);
+    border-left: 2px solid #c9c3ba;
+    padding-left: 16px;
+ }
+
+#search-input { background-color: #f8f7f5; }
+ #search-icon img { float: right; }
+ .search-wrap { position: relative;  }
+
+ .nav-fixed-top { 
+ 	animation-duration: .25s;
+ 	animation-name: dropdown-nav;  
+	width: 100%; 
+	position: fixed; top: 0px; z-index: 1000;  opacity: 1;
+	animation-timing-function: linear;
+}
+
+ @keyframes dropdown-nav {
+ 	from { position: relative; opacity: 0; }
+ 	to { position: fixed; top: 0px; z-index: 1000;  opacity: 1; }
+ }

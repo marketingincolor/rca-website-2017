@@ -45,6 +45,7 @@ if ( ! function_exists( 'rca_inc_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'rca-inc' ),
+      'secondary' => esc_html__( 'Secondary Menu Desktop', 'rca-inc' )
 		) );
 
 		/*
@@ -121,7 +122,7 @@ function rca_inc_scripts() {
 	wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css');
 	wp_enqueue_script( 'top-slider', get_stylesheet_directory_uri() . '/js/top-slider.js' );
 	wp_enqueue_script( 'rca-inc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+  wp_enqueue_script( 'header-scroll-js', get_template_directory_uri() . '/js/header-scroll.js' );
 	wp_enqueue_script( 'rca-inc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -718,3 +719,56 @@ function get_team_members($role_type) {
   else { echo 'No Team Members Found'; }
 }
 
+class RCA_SECONDARY_WALKER extends Walker_Nav_Menu {
+
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= '<ul>';
+    }
+
+    public function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= '</ul>';
+    }
+
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = array();
+        if( !empty( $item->classes ) ) {
+            $classes = (array) $item->classes;
+        }
+
+        $active_class = '';
+        if( in_array('current-menu-item', $classes) ) {
+            $active_class = ' class="active"';
+        } else if( in_array('current-menu-parent', $classes) ) {
+            $active_class = ' class="active-parent"';
+        } else if( in_array('current-menu-ancestor', $classes) ) {
+            $active_class = ' class="active-ancestor"';
+        }
+
+        $url = '';
+        if( !empty( $item->url ) ) {
+            $url = $item->url;
+        }
+
+        // $terms = get_the_terms( get_the_ID(), 'category');
+        // var_dump($terms);
+        $image = get_field('taxonomy_image', 'case-studies');
+
+        //$image = get_field( 'taxonomy_image', $item->title);
+        //var_dump($image);
+
+        $output .= '<a href="' . $url . '"><div class="secondary-menu-item-wrapper"><span class="cat-image"><img src="' . get_cat_image($item->title) . '" /></span><li'. $active_class . '>' . $item->title . '</li></div></a>';
+    }
+
+
+    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= '</li>';
+    }
+}
+
+function get_cat_image($title) {
+  $title = $title;
+  $term_obj = get_term_by( 'name', $title, 'expertise' );
+  $term_id = $term_obj->term_taxonomy_id;
+  $icon_img = get_field('taxonomy_image',  'expertise_' . $term_id);
+  return $icon_img['url'];
+}
