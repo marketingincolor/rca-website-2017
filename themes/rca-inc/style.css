@@ -924,6 +924,7 @@ object {
 }
 
 /*Utilities*/
+.section-padding-60 { padding: 3.75rem 0rem; }
 .no-padding { padding:0rem 0rem !important; }
 .relative { position: relative; }
 .inline-block { display:inline-block !important; }
@@ -1202,9 +1203,10 @@ input[type="email"] { font-family: 'FontAwesome', 'Roboto'; }
 }
 
 .orange-overlay { 
-	position:absolute;
+	position:relative;
 	top:0px;
 	width: 100%;
+	height: auto;
 	background-color: rgba(196,97,43, .6);
 
 }
@@ -1283,6 +1285,7 @@ button#learn-more-btn { font-weight: bold; }
 
 #owl-carousel-news .owl-pagination,
 #owl-carousel-news .owl-controls { display:none !important; }
+#owl-carousel-top-slider-2 .owl-pagination { display: none; }
 
 .title-bar { 
 	background-color: #9d938a !important;
@@ -1302,19 +1305,16 @@ button#learn-more-btn { font-weight: bold; }
 /*MENU STUFF*/
 
 
-
-
-
 .no-js #menu-section {
   display: none;
 }
 
-#main { padding: 0rem 0rem 4.5rem; }
 
 
 /*MEGAAAAAAAA MEU*/
 
 /*Contact Menu Item*/
+#mega-menu-container { background-color: #; }
 #mega-menu-container .contact-menu-item { background-color: #c4612b; }
 #mega-menu-container .contact-menu-item a { color: #fff; }
 /*Removes border right for contact menu*/
@@ -1505,6 +1505,7 @@ button#learn-more-btn { font-weight: bold; }
 #menu-secondary-menu li a:visited { color: #fff; }
 
 /*case study section button overwrites normal button*/
+#case-study-btn { margin-top:2rem; }
 button.home-cs-orange-btn {
 	font-weight: bold !important;
 	width: auto !important;
@@ -1573,10 +1574,57 @@ button.home-cs-orange-btn {
  	animation-name: dropdown-nav;  
 	width: 100%; 
 	position: fixed; top: 0px; z-index: 1000;  opacity: 1;
-	animation-timing-function: linear;
+	animation-timing-function: ease-in;
+}
+
+.nav-static-top {
+	position: static;
+	width: 100%;
+	animation-duration: 0s;
+	animation-name: dropdown-nav-top;
+	animation-timing-function: ease-out;
 }
 
  @keyframes dropdown-nav {
  	from { position: relative; opacity: 0; }
  	to { position: fixed; top: 0px; z-index: 1000;  opacity: 1; }
  }
+
+ @keyframes dropdown-nav-top {
+ 	from { position: fixed; top: 0px; z-index: 1000;  opacity: 1; }
+	to { position: relative; opacity: 0; }
+ }
+
+ /*Overides*/
+ input[type="text"]:focus { 
+ 	box-shadow: none;
+ 	border-radius: 0px;
+ 	border-top: 0px;
+ 	border-right: 0px;
+ 	border-left: 0px;
+  }
+
+ input[type="text"] { border-radius: 0px; }
+
+ input[type="email"]:focus {
+ 	box-shadow: none;
+ 	border-radius: 0px;
+ 	border-top: 0px;
+ 	border-right: 0px;
+ 	border-left: 0px;
+ }
+
+.location-address, .location-phone, .location-fax, .location-email { margin-bottom: .5rem; }
+.location-name { font-weight: bold; font-style: italic; font-size: 1.25rem; font-family: 'Lora', serif; margin-bottom: 1rem; }
+.location-name i, .location-address i, .location-phone i, .location-fax i, .location-email i { color: #c4612b; padding-right: .5rem; }
+#location-block { padding: 1rem 0rem; }
+
+#location-block p { 
+	margin-bottom: 0rem;
+	display: inline-block;
+	width: 90%;
+	vertical-align: middle;
+	line-height: 1rem;
+}
+
+ #all-locations { padding: 2rem 0rem; }

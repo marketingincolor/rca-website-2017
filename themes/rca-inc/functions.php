@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'rca_inc_widgets_init' );
 function rca_inc_scripts() {
 	wp_enqueue_style( 'rca-inc-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css');
-	wp_enqueue_script( 'top-slider', get_stylesheet_directory_uri() . '/js/top-slider.js' );
+//	wp_enqueue_script( 'top-slider', get_stylesheet_directory_uri() . '/js/top-slider.js' );
 	wp_enqueue_script( 'rca-inc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
   wp_enqueue_script( 'header-scroll-js', get_template_directory_uri() . '/js/header-scroll.js' );
 	wp_enqueue_script( 'rca-inc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -430,6 +430,58 @@ function rca_top_slider($atts, $content = null) {
     return $result;
 }
 add_shortcode('rca-top-slider', 'rca_top_slider');
+
+/* ------------------------------------------------------------------------ *
+* Carousel 2 - Top
+* ------------------------------------------------------------------------ */
+
+
+function rca_top_slider_2($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'category' => 'Uncategorized'
+                    ), $atts));
+
+    $data_attr = "";
+    foreach ($atts as $key => $value) {
+        if ($key != "category") {
+            $data_attr .= ' data-' . $key . '="' . $value . '" ';
+        }
+    }
+
+    $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
+
+    $args = array(
+        'post_type' => 'owl-carousel',
+        'orderby' => get_option('owl_carousel_orderby', 'post_date'),
+        'order' => 'asc',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'Carousel',
+                'field' => 'slug',
+                'terms' => $atts['category']
+            )
+        ),
+        'nopaging' => true
+    );
+
+  $result = '<div id="owl-carousel-top-slider-2" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) {
+        $loop->the_post();
+
+        $result .= '<div class="item">';
+        $result .= '<div class="owl-carousel-item-text">' . get_the_content() . '</div>';
+        $result .= '</div>';
+    }
+    $result .= '</div>';
+    
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    return $result;
+}
+add_shortcode('rca-top-slider-2', 'rca_top_slider_2');
 
 
 /* ------------------------------------------------------------------------ *

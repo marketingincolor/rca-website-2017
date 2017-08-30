@@ -5,16 +5,20 @@ jQuery(document).ready(function($) {
 	var header_height = $('#entire-header').height();
 	console.log('Header Height: ' + header_height);
 
-	$(window).scroll(function() {
-		console.log("Scroll Top: " + $(window).scrollTop());
+	$(function sticky_relocate() {
+		$(window).scroll(function() {
+			console.log("Scroll Top: " + $(window).scrollTop());
 
-		if( ($(window).scrollTop() > header_height) ) { 
-			header.addClass('nav-fixed-top');
-		}
-		else { 
-			header.removeClass('nav-fixed-top');
-		}
+			if( ($(window).scrollTop() > header_height) ) { 
+				header.addClass('nav-fixed-top');
+				header.removeClass('nav-static-top');
+			}
+			else { 
+				header.removeClass('nav-fixed-top');
+				header.addClass('nav-static-top');
+			}
 
+		});
 	});
 
 });

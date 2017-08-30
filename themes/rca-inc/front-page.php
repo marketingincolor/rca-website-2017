@@ -16,7 +16,15 @@ get_header(); ?>
 
 	<!-- TOP SLIDER -->
 	<?php echo do_shortcode('[rca-top-slider category="front-page-top" items=1 autoPlay="true"]'); ?>
+	<div class="row">
+		<div class="large-4 columns">
+			<div class="orange-overlay">
+				<?php echo do_shortcode('[rca-top-slider-2 category="front-page-top" items=1 autoPlay="true"]'); ?>
+			</div>
+		</div>
+	</div>
 	<!-- /TOP SLIDER -->
+
 	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

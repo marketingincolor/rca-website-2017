@@ -121,7 +121,7 @@
 	
 		<div id="all-case-studies">
 			<!-- CASE STUDIES FIRST LOOP-->
-			<div id="case-studies" class="row" style="padding-bottom: 0em;">
+			<div id="" class="row" style="padding-bottom: 0em;">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
 					<h1 class="text-center">Case Studies</h1>
 					<?php
@@ -205,7 +205,7 @@
 					</div>
 				</div>
 				<!-- CASE STUDIES SECOND LOOP -->
-				<div class="row">
+				<div id="case-study-btn" class="row">
 					<div class="small-10 small-offset-1 columns">
 						<button class="home-cs-orange-btn">View All Case Studies</button>
 					</div>
