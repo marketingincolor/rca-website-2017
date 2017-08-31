@@ -1635,10 +1635,14 @@ button.home-cs-orange-btn {
 
 
 /*NEW MOBILE MENU*/
+#mobile-menu { background-color: #f8f7f5; }
+#mobile-menu #search-input { margin: 1.5rem 0rem; border: 3px solid #c9c3ba; color: #c9c3ba; }
+#mobile-menu input[type="submit"] { display:none; }
 #mobile-menu li { background-color: #f8f7f5; color: #9d938b; font-size: 1.375rem; }
 #mobile-menu li a:first-child { color: #9d938b; }
 #mobile-menu li.is-active { background-color: #c4612b; }
 #mobile-menu>li>a { padding: 1rem 2rem; }
+#mobile-menu #top-nav-wrapper { padding: 1.5rem 0rem; }
 .open { background-color: #f8f7f5; }
 .bar-open { background: #c4612b; }
 div.bar.animate::before { background: #c4612b; }

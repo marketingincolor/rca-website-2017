@@ -4,7 +4,12 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * TODO: Refactor WordPress Menus. Leaving right now as this is the fastest way I can work with them. -AD
+ * TODO: 
+ * 
+ * Refactor WordPress Menus. Leaving right now as this is the fastest way I can work with them.
+ * Clean styles out of content blocks.
+ * Clean stylesheet.
+ * Clean unecessary CDNs and JS files.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -159,78 +164,94 @@
 		<!-- PHONE ON MOBILE BUTTON -->
 		<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 
-			<div class="small-6 columns text-center" data-equalizer-watch>
-				<p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p>		
+			<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
+				<p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p>		
 			</div>
-			<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="border-left: 2px solid #fff;">
+			<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="">
 				<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
 					<div class="hamburger-menu" type="button" data-toggle><div class="bar"></div></div>
 				</div>
 			</div>
 		</div>
 <ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu data-submenu-toggle="true">
-
-	<li>
-		<a href="#">Medical Devices</a>
-<!-- 		<ul class="menu vertical nested">
-			<li><a href="#">Item 1Ai</a></li>
-			<li><a href="#">Item 1Aii</a></li>
-			<li><a href="#">Item 1Aiii</a></li>
-		</ul> -->
-		<!-- Regulatory Affairs -->
-		<ul>
+	<div id="top-nav-wrapper">
+		<div class="row">
+			<div class="small-10 small-offset-1 columns">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-10 small-offset-1 columns">
+				<button class="">Explore all of Our Expertise</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-10 small-offset-1 columns">
 			<li>
-				<h3>Regulatory Affairs</h3>
-				<?php wp_nav_menu( array('menu' => 'Regulatory Affairs')); ?>
+				<a href="#">Medical Devices</a>
+		<!-- 		<ul class="menu vertical nested">
+					<li><a href="#">Item 1Ai</a></li>
+					<li><a href="#">Item 1Aii</a></li>
+					<li><a href="#">Item 1Aiii</a></li>
+				</ul> -->
+				<!-- Regulatory Affairs -->
+				<ul>
+					<li>
+						<h3>Regulatory Affairs</h3>
+						<?php wp_nav_menu( array('menu' => 'Regulatory Affairs')); ?>
 
+					</li>
+				</ul>
+				
+				<!-- Compliance Assurance -->
+				<ul>
+					<li>
+						<h3>Compliance Assurance</h3>
+						<?php wp_nav_menu( array('menu' => 'Compliance Assurance')); ?>
+
+					</li>
+				</ul>
+
+				<!-- Quality Services -->
+				<ul>
+					<li>
+						<h3>Quality Services</h3>
+						<?php #wp_nav_menu( array('menu' => 'Quality Services')); ?>
+
+					</li>
+				</ul>
+				
+				<!-- Remediation Strategy & Support -->
+				<ul>
+					<li>
+						<h3>Remediation Strategy and Support</h3>
+						<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support')); ?>
+
+					</li>
+				</ul>
+
+				<!-- Strategic Consulting -->
+				<ul>
+					<li>
+						<h3>Strategic Consulting</h3>
+						<?php wp_nav_menu( array('menu' => 'Strategic Consulting')); ?>
+
+					</li>
+				</ul>
 			</li>
-		</ul>
-		
-		<!-- Compliance Assurance -->
-		<ul>
 			<li>
-				<h3>Compliance Assurance</h3>
-				<?php wp_nav_menu( array('menu' => 'Compliance Assurance')); ?>
-
+					<a href="#">Pharmaceutical</a>
+		<!-- 			<ul class="menu vertical nested">
+					
+					</ul> -->
 			</li>
-		</ul>
-
-		<!-- Quality Services -->
-		<ul>
-			<li>
-				<h3>Quality Services</h3>
-				<?php #wp_nav_menu( array('menu' => 'Quality Services')); ?>
-
-			</li>
-		</ul>
-		
-		<!-- Remediation Strategy & Support -->
-		<ul>
-			<li>
-				<h3>Remediation Strategy and Support</h3>
-				<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support')); ?>
-
-			</li>
-		</ul>
-
-		<!-- Strategic Consulting -->
-		<ul>
-			<li>
-				<h3>Strategic Consulting</h3>
-				<?php wp_nav_menu( array('menu' => 'Strategic Consulting')); ?>
-
-			</li>
-		</ul>
-	</li>
-	<li>
-			<a href="#">Pharmaceutical</a>
-<!-- 			<ul class="menu vertical nested">
+			<li><a href="#">Additional Services</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">News</a></li>
 			
-			</ul> -->
-	</li>
-	<li><a href="#">Additional Services</a></li>
-	<li><a href="#">About</a></li>
-	<li><a href="#">News</a></li>
+		</div>
+	</div>
 
 </ul>
 	</section>
