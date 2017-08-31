@@ -1288,12 +1288,11 @@ button#learn-more-btn { font-weight: bold; }
 #owl-carousel-top-slider-2 .owl-pagination { display: none; }
 
 .title-bar { 
-	background-color: #9d938a !important;
-	padding: 1rem 0rem;
+	background-color: #9d938a;
 }
 
 
-#phone-icon i {
+#mobile-top-bar i {
 	color: #c4612b;
     background-color: #fff;
     padding: 10px;
@@ -1437,6 +1436,7 @@ button#learn-more-btn { font-weight: bold; }
 .staff-position { font-size: .9rem; }
 
 .no-avatar .staff-name { padding-top: 0rem; }
+.title-bar { padding: 0rem;}
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
@@ -1469,7 +1469,6 @@ button#learn-more-btn { font-weight: bold; }
 
 /* Large and up */
 @media screen and (min-width: 64em) {
-	.title-bar { color: ; }
 	.top-bar .menu li a { width: 200px; text-align: center; }
 	.site-branding { padding: 2.8rem; background-color: #ffffff; }
 	.menu.large-horizontal>li { position: relative; }
@@ -1628,3 +1627,19 @@ button.home-cs-orange-btn {
 }
 
  #all-locations { padding: 2rem 0rem; }
+
+#location-accordian .location-name { margin-bottom: 0rem; font-family: 'Roboto', sans-serif; font-style: normal; color: #fff; }
+#location-accordian .accordian-item { background-color: #c9c3ba; }
+#location-accordian > li { background-color: #c9c3ba; }
+.accordion-title:focus, .accordion-title:hover { background-color: #9d938b; }
+
+
+/*NEW MOBILE MENU*/
+#mobile-menu li { background-color: #f8f7f5; color: #9d938b; font-size: 1.375rem; }
+#mobile-menu li a:first-child { color: #9d938b; }
+#mobile-menu li.is-active { background-color: #c4612b; }
+#mobile-menu>li>a { padding: 1rem 2rem; }
+.open { background-color: #f8f7f5; }
+.bar-open { background: #c4612b; }
+div.bar.animate::before { background: #c4612b; }
+div.bar.animate::after { background: #c4612b; }

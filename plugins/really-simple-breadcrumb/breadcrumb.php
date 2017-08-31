@@ -21,7 +21,7 @@ function simple_breadcrumb() {
 		echo '<a href="';
 		echo get_option('home');
 		echo '">';
-		bloginfo('name');
+		echo 'Home';
 		echo "</a> ".$separator;
 		if ( is_category() || is_single() ) {
 			the_category(', ');

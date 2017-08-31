@@ -82,7 +82,7 @@
 
 	</div>
 		<!-- MOBILE CONTACT PAGE LAYOUT -->
-		<ul class="accordion hide-for-medium" data-accordion  data-allow-all-closed="true">
+		<ul id="location-accordian" class="accordion hide-for-medium" data-accordion  data-allow-all-closed="true">
 
 			<?php
 				$args = array(
@@ -106,7 +106,7 @@
 							$block = '<li class="accordion-item" data-accordion-item>';
 							$block .= '<a href="#" class="accordion-title location-name">' . get_the_title() . '</a>';
 							$block .= '<div class="accordion-content" data-tab-content>';
-							$block .= '<div class="row"><div class="small-6 small-offset-3 columns">';
+							$block .= '<div class="row"><div class="small-10 small-offset-1 columns">';
 							if($location_address):
 								$block .= '<div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i> <p>' . $location_address . '</p></div>';
 							endif;

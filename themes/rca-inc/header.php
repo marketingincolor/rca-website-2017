@@ -4,6 +4,8 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
+ * TODO: Refactor WordPress Menus. Leaving right now as this is the fastest way I can work with them. -AD
+ *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package RCA_Inc.
@@ -40,7 +42,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rca-inc' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<section id="entire-header">
+
+		<section id="entire-header" class="show-for-large">
 
 			<!-- LOGO -->
 			<div class="row expanded">
@@ -48,74 +51,22 @@
 					<?php the_custom_logo(); ?>
 				</div>
 			</div>
-
 			<!-- PHONE ON MOBILE BUTTON -->
 			<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
 
 				<div class="small-6 columns text-center" data-equalizer-watch>
 					<p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p>		
 				</div>
-				<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="border-left: 2px solid #fff;">
+				<div id="menu-section" class="small-6 columns relative" data-equalizer-watch>
 					<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
 						<div class="hamburger-menu" type="button" data-toggle><div class="bar"></div></div>
 					</div>
 				</div>
 			</div>
 
-					<!-- MAIN NAVIGATION -->
-			<!-- 		<div class="row expanded" style="background-color:#f8f7f5;" data-equalizer>
-						<div class="large-10 large-offset-1 columns">
-							<div class="top-bar" id="the-menu">
-							    <div class="top-bar-left" data-equalizer-watch>
-								    <?php
-										// wp_nav_menu( array(
-										// 	'container'      => false,
-										// 	'menu'           => 'menu-1',
-										// 	'menu_class'     => 'large-horizontal menu vertical accordian-menu mega-menu',
-										// 	'theme_location' => 'menu-1',
-										// 	'items_wrap'     => '<ul id="%1$s" class="%2$s accordian-menu" data-hide-for="large" data-accordion-menu>%3$s</ul>',
-										// 	//Recommend setting this to false, but if you need a fallback...
-										// 	'walker'         => new RCA_ACCORDIAN_MENU_WALKER(),
-										// ) );
-
-										?>
-							    </div>
-							    <div class="top-bar-right relative show-for-large text-center" data-equalizer-watch>
-							    	<a href=#" style="line-height:16px;"><p style="font-weight: bold; color: #fff; margin-bottom: 0rem; position: relative; padding: 1rem 1rem; width: 200px"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
-
-							    </div>
-							</div>
-						</div>
-					</div>
-			 -->
-					 <div id="top-menu">
-					 <div id="top-menu" class="row">
-						 <div class="large-12 columns">
-					<!-- 	  <ul id="mega-menu-container" class="menu" data-dropdown-menu data-click-open="true" data-disable-hover="true">
-						    <li>
-						      <a href="#">University</a>
-						    </li>
-						    <li class="mega-menu">
-						      <a href="#">Programs</a>
-						      <ul class="menu">
-
-						      </ul>
-
-						  </ul> -->
-					    <?php
-							// wp_nav_menu( array(
-							// 	'container'      => false,
-							// 	'menu'           => 'menu-1',
-							// 	'menu_class'     => 'mega-menu menu',
-							// 	'menu_id' => 'mega-menu-container',
-							// 	'theme_location' => 'menu-1',
-							// 	'items_wrap'     => '<ul id="%1$s" class="%2$s" data-hide-for="large" data-dropdown-menu data-options="is_hover:true; hover_timeout:5000">%3$s</ul>',
-							// 	//Recommend setting this to false, but if you need a fallback...
-							// 	'walker' => new megaMenuWalker(),
-							// ) );
-
-						?>
-
+			<div id="top-menu">
+				<div id="top-menu" class="row">
+					<div class="large-12 columns">
 						<ul id="mega-menu-container" class="dropdown menu show-for-large" data-dropdown-menu>
 							<li class="mega-menu">
 								<a href="#">Medical Devices</a>
@@ -196,6 +147,94 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- MOBILE NAV -->
+	<section id="" class="hide-for-large">
+
+		<div class="row expanded hide-for-large">
+			<div class="site-branding small-12 columns align-items-center text-center">
+				<?php the_custom_logo(); ?>
+			</div>
+		</div>
+		<!-- PHONE ON MOBILE BUTTON -->
+		<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
+
+			<div class="small-6 columns text-center" data-equalizer-watch>
+				<p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p>		
+			</div>
+			<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="border-left: 2px solid #fff;">
+				<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
+					<div class="hamburger-menu" type="button" data-toggle><div class="bar"></div></div>
+				</div>
+			</div>
+		</div>
+<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu data-submenu-toggle="true">
+
+	<li>
+		<a href="#">Medical Devices</a>
+<!-- 		<ul class="menu vertical nested">
+			<li><a href="#">Item 1Ai</a></li>
+			<li><a href="#">Item 1Aii</a></li>
+			<li><a href="#">Item 1Aiii</a></li>
+		</ul> -->
+		<!-- Regulatory Affairs -->
+		<ul>
+			<li>
+				<h3>Regulatory Affairs</h3>
+				<?php wp_nav_menu( array('menu' => 'Regulatory Affairs')); ?>
+
+			</li>
+		</ul>
+		
+		<!-- Compliance Assurance -->
+		<ul>
+			<li>
+				<h3>Compliance Assurance</h3>
+				<?php wp_nav_menu( array('menu' => 'Compliance Assurance')); ?>
+
+			</li>
+		</ul>
+
+		<!-- Quality Services -->
+		<ul>
+			<li>
+				<h3>Quality Services</h3>
+				<?php #wp_nav_menu( array('menu' => 'Quality Services')); ?>
+
+			</li>
+		</ul>
+		
+		<!-- Remediation Strategy & Support -->
+		<ul>
+			<li>
+				<h3>Remediation Strategy and Support</h3>
+				<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support')); ?>
+
+			</li>
+		</ul>
+
+		<!-- Strategic Consulting -->
+		<ul>
+			<li>
+				<h3>Strategic Consulting</h3>
+				<?php wp_nav_menu( array('menu' => 'Strategic Consulting')); ?>
+
+			</li>
+		</ul>
+	</li>
+	<li>
+			<a href="#">Pharmaceutical</a>
+<!-- 			<ul class="menu vertical nested">
+			
+			</ul> -->
+	</li>
+	<li><a href="#">Additional Services</a></li>
+	<li><a href="#">About</a></li>
+	<li><a href="#">News</a></li>
+
+</ul>
+	</section>
+	<!-- /MOBILE NAV -->
 
 	</header>
 

@@ -95,6 +95,8 @@
 				};
 			});
 		</script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/js/mobile-nav.js'; ?>"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/js/foundation.js"></script>
 <!-- Slick Sliders -->
