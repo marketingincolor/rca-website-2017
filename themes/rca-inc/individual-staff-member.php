@@ -62,4 +62,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+//get_template_part('template-parts/section', 'learn-more' );
+get_template_part('template-parts/section', 'news');
 get_footer();

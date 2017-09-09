@@ -122,7 +122,7 @@
 								<li><a href="#">Additional Services</a></li>
 
 								<li><a href="#">About</a></li>
-								<li><a href="#">News</a>
+								<li><a href="<?php echo home_url('/news/' );?>">News</a>
 								</li>
 								<li class="contact-menu-item"><a href=""><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
 							</li>
@@ -173,7 +173,7 @@
 				</div>
 			</div>
 		</div>
-<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu data-submenu-toggle="true">
+<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu >
 	<div id="top-nav-wrapper">
 		<div class="row">
 			<div class="small-10 small-offset-1 columns">
@@ -186,8 +186,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="small-10 small-offset-1 columns">
+		<div id="bottom-nav-wrapper">
 			<li>
 				<a href="#">Medical Devices</a>
 		<!-- 		<ul class="menu vertical nested">
@@ -250,10 +249,9 @@
 			<li><a href="#">About</a></li>
 			<li><a href="#">News</a></li>
 			
-		</div>
-	</div>
 
 </ul>
+</div>
 	</section>
 	<!-- /MOBILE NAV -->
 

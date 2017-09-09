@@ -1,3 +1,4 @@
+<?php ?>
 <!-- NEWS -->
 <div id="news-section" class="row expanded">
 	<div class="text-center">

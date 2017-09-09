@@ -1,0 +1,32 @@
+Stylesheet:
+  ☐ Orangize Styles @low
+
+Home:
+  ☐ Get Forms Working (Mobile/Desktop) @due(2017-09-08)
+  ☐ Get Sliders Working (Mobile/Desktop) @due(2017-09-08)
+
+Contact:  
+  ☐ Form (Mobile/Desktop) @due(2017-09-08)
+
+Indivdiual Staff Page:
+  ☐ Form (Mobile/Desktop) @high
+  ☐ News Slider (Mobile Desktop) @high
+
+All Staff Members:
+  ☐ Reduce Padding Around Members 
+  ☐ Organize Members
+
+News Feed:
+@started(17-09-06 14:54)
+ ✔ Add Featured Image @done (17-09-06 15:20)
+ ☐ Add Query to loop through posts
+ ☐ Define how Press Releases/Events are handled in WP.
+ ☐ Add Styles
+ ☐ Add AJAX
+
+News Post:
+
+
+
+
+

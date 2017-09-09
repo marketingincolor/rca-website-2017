@@ -1,5 +1,7 @@
-<?php ?>
-<div id="learn-more-form-container"">
+<?php 
+
+?>
+<div id="learn-more-form-container">
 		<div class="row" >
 			<div class="small-10 small-offset-1 columns text-center">
 				<h1>I'm interested in Learning More About RCA</h1>

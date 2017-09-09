@@ -18,7 +18,7 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main contact-page">
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -31,6 +31,20 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<div id="share-bar" class="row expanded">
+		<div class="row text-center">
+			<p>Share on Social Media</p>
+			<i class="fa fa-facebook" aria-hidden="true"></i>
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+			<i class="fa fa-linkedin" aria-hidden="true"></i>
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+			<i class="fa fa-share" aria-hidden="true"></i>
+		</div>
+	</div>
+	
+	<div id="contact-learn-more-wrapper">
+		<?php get_template_part('template-parts/section', 'learn-more'); ?>
+	</div>
 <?php
 //get_sidebar();
 get_footer();

@@ -11,11 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div id="front-page-main-content">
+	<div id="front-page-main-content" class="rca">
 
 		<!-- TITLE -->
 		<div class="row">
-			<div class="small-10 small-offset-1 columns text-center">
+			<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns text-center">
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
@@ -39,7 +39,7 @@
 		<!-- END CONTENT -->
 		
 		<!-- SERVICES -->
-		<div id="front-page-services" class="row text-center">
+		<div id="front-page-services" class="row text-center rca" data-equalizer>
 				<?php 
 
 				$img_array = array(
@@ -78,9 +78,9 @@
 						$additional_class = '';
 					}
 
-					echo '<div class="small-12 medium-4 ' . $additional_class . ' columns">';
+					echo '<div id="individual-service" class="small-12 medium-4 ' . $additional_class . ' columns rca" data-equalizer-watch>';
 					echo '<img src="' . $img_array[$i]['url'] . '" />';
-					echo '<h4>' . $title_array[$i] . '</h4>';
+					echo '<h2>' . $title_array[$i] . '</h2>';
 					echo '<p>' . $content_array[$i] . '</p>';
 					echo '<a href="'.$button_array[$i].'"><button>Learn More</button></a>';
 					echo '</div>';
@@ -94,7 +94,7 @@
 	</div>
 
 	<!-- CTA -->
-	<div id="sign-up-cta" class=""  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta.jpg'; ?>'); background-size: cover; height: auto;">
+	<div id="sign-up-cta" class="rca"  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta.jpg'; ?>'); background-size: cover; height: auto;">
 
 		<!-- mobile cta -->
 		<div class="row text-center hide-for-medium">
@@ -119,10 +119,10 @@
 	</div>
 	<!-- END CTA -->
 	
-		<div id="all-case-studies">
+		<div id="all-case-studies" class="rca">
 			<!-- CASE STUDIES FIRST LOOP-->
-			<div id="" class="row" style="padding-bottom: 0em;">
-				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+			<div id="" class="row rca" style="padding-bottom: 0em;">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns rca">
 					<h1 class="text-center">Case Studies</h1>
 					<?php
 
@@ -144,7 +144,7 @@
 
 							while($case_studies ->have_posts()) : $case_studies->the_post();
 
-								echo '<div class="individual-case-study">';
+								echo '<div class="individual-case-study rca">';
 									echo '<h3 class="text-left">' . get_the_title() . '</h3>';
 									echo '<p class="text-left">' . wp_trim_words( get_the_content(), 40, '...</br><a href="#" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 								echo '</div>';
@@ -161,8 +161,8 @@
 			<!-- /CASE STUDIES FIRST LOOP -->
 
 			<!-- CASE STUDIES SECOND LOOP -->
-			<div class="row">
-				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+			<div class="row rca">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns rca">
 					<div class="row">
 					
 							<?php
@@ -188,9 +188,9 @@
 
 										<div class="small-12 medium-6 columns">
 								<?php
-										echo '<div class="individual-case-study">';
+										echo '<div class="individual-case-study rca">';
 											echo '<h3 class="text-left">' . get_the_title() . '</h3>';
-											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 40, '...</br><a href="#" title="Read More" class="read-more">Read More</a>' ) . '</p>';
+											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 20, '...</br><a href="#" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 										echo '</div>';
 										echo '</div>';
 									endwhile;
