@@ -8,12 +8,6 @@ header("HTTP/1.1 200 OK");
 	// Retrieve Query Vars.
 	$category  = $_POST['category'];
 	$dropdown_query = $_POST['dropdown_query'];
-
-	var_dump($_POST);
-
-
-	//var_dump($dropdown_query);
-	var_dump($category);
   
   	// Change News Query Based on whats clicked in rca-filter-news.js
   	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
