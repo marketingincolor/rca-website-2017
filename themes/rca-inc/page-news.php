@@ -35,7 +35,7 @@ get_header(); ?>
 		<div class="small-12 medium-2 columns end" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" news_filter="Year Published">
 
 			<!-- Dynamically Set Year in Dropdown -->
-			<select id="newsFilterSelect" class="" onclick="filterNewsPosts('<?php echo get_stylesheet_directory_uri(); ?>', getCategory(), ajaxFilterYear())">
+			<select id="newsFilterSelect" class="" onclick="filterNewsPostsNoSpinner('<?php echo get_stylesheet_directory_uri(); ?>', getCategory(), ajaxFilterYear())">
 			<?php 
 				$beginning_year = 2016;
 				$current_year = date("Y");
@@ -50,12 +50,20 @@ get_header(); ?>
 
 		</div>
 		<input class="rca_query" type="hidden" value="all">
+		<div class="spinner" style="display:none;">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
 	</div>
 	<!-- /Buttons -->
 
 
 	<div class="post-container">
-
+		<script>
+		$(document).ready(function() {
+			defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', 'all', ajaxFilterYear());
+		});
+		</script>
 				
 	</div>
 

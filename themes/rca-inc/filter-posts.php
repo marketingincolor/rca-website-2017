@@ -44,6 +44,10 @@ header("HTTP/1.1 200 OK");
 
 	}
 	else{
-		echo '<h3 class="">Sorry, no ' . $query . ' stories at this time.</p>';
+		echo '<div class="row">';
+		echo '<div class="small-10 small-offset-1 columns">';
+		echo '<h3 class="">Sorry, we can\'nt find any posts that match this search right now...</p>';
+		echo '</div>';
+		echo '</div>';
 	}
 ?>

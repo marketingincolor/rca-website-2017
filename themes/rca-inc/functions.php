@@ -119,7 +119,7 @@ add_action( 'widgets_init', 'rca_inc_widgets_init' );
  */
 function rca_inc_scripts() {
 
-  wp_register_script('afp_script', get_template_directory_uri() . '/js/rca-filter-news.js', false, null, false);
+  wp_register_script('afp_script', get_template_directory_uri() . '/js/rca-filter-news.js', false, null, true);
   wp_enqueue_script('afp_script');
  
   wp_localize_script( 'afp_script', 'afp_vars', array(

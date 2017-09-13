@@ -24,7 +24,6 @@ function filterPosts(templateURL) {
         var category = newsButton.attr('news_filter');
 
         filterNewsPosts(templateURL, category, ajaxFilterYear());
-        console.log('Set Category: ' + category);
 
         // Add to hidden input
         $('.rca_query').attr('value', category);
@@ -43,13 +42,6 @@ function filterPosts(templateURL) {
  */
 function getCategory() {
     var category = $('.rca_query').val();
-
-    if(category == "") {
-        console.warn('RCA Information: No Category Selected. Showing All Posts...');
-        // IF NO QUERY IS FOUND LETS SHOW ALL
-        category = 'all';
-    }
-
     return category;
 }
 
@@ -85,7 +77,6 @@ function ajaxFilterYear() {
     }
 
     var dropdown_query = selectedNode;
-    console.log(dropdown_query);
     return dropdown_query;
 
 }
@@ -95,7 +86,7 @@ function ajaxFilterYear() {
 /**
  * Description:
  * 
- * Ran from filterPosts() and select option on blog page.
+ * Ran from filterPosts()
  * POSTS data to filter-posts.php and adds to page-news.php.
  *
  * @author  Doe
@@ -106,12 +97,64 @@ function ajaxFilterYear() {
 */
 function filterNewsPosts(templateURL, category, dropdown_query) {
 
+    // If we don't have a category log an error to the console.
+    if(category == "") {
+        console.warn('RCA Information: No Category Selected. Showing All Posts...');
+        category = 'all';
+    }
+
+    // If we don't have a year from the dropdown log an error to the console.
     if(dropdown_query == "" ) {
         console.warn('RCA Information: No dropdown query found.');
     }
 
     var content = $('.post-container');
+    content.hide();
 
+
+        $.ajax({
+            url: templateURL + '/filter-posts.php',
+            type: 'POST',
+            beforeSend: function() {
+                $('.spinner').fadeIn(500); 
+            },
+            data: {category : category, dropdown_query : dropdown_query },
+            success: function(response) {
+                        content.html(response).fadeIn(1000);
+            },
+            complete: function() { $('.spinner').fadeOut(500); }
+        });
+
+
+}
+
+/**
+ * Description:
+ * 
+ * Ran from select option on blog page. Doesn't display the loading animation.
+ * POSTS data to filter-posts.php and adds to page-news.php.
+ *
+ * @author  Doe
+ * @param {string} templateURL page the function was called on.
+ * @param {string} category Category stored in hidden input rca_query
+ * @param {array} dropdown_query array of years to query.
+ * @return {void} AJAX call to filter-posts.php
+*/
+function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
+
+    // If we don't have a category log an error to the console.
+    if(category == "") {
+        console.warn('RCA Information: No Category Selected. Showing All Posts...');
+        category = 'all';
+    }
+
+    // If we don't have a year from the dropdown log an error to the console.
+    if(dropdown_query == "" ) {
+        console.warn('RCA Information: No dropdown query found.');
+    }
+
+    var content = $('.post-container');
+    content.hide();
 
 
         $.ajax({
@@ -119,14 +162,40 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
             type: 'POST',
             data: {category : category, dropdown_query : dropdown_query },
             success: function(response) {
-                        content.html(response);
-            }
+                        content.html(response).fadeIn(1000);
+            },
         });
+
 
 }
 
 
+/**
+ * Description:
+ * 
+ * Magically "View All" posts when the page is loaded.
+ *
+ * @author  Doe
+ * @param  {[string]} templateURL    [Path to page where function is ran]
+ * @param  {[string]} category       [defaults to "all" to view all blog posts]
+ * @param  {[array]} dropdown_query ["defaults to get all years"]
+ * @return {[void]}                [AJAX request]
+ */
+function defaultNewsFilter(templateURL, category, dropdown_query) {
 
+    var content = $('.post-container');
 
+    $('#all').addClass('newsClick');
 
+    $.ajax({
+        url: templateURL + '/filter-posts.php',
+        type: 'POST',
+        beforeSend: function() {$('.spinner').fadeIn(500); },
+        data: {category : category, dropdown_query : dropdown_query },
+        success: function(response) {
+                    content.html(response).fadeIn(1000);
+        },
+        complete: function() { $('.spinner').fadeOut(500); }
+    });
 
+}
