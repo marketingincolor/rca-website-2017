@@ -19,14 +19,15 @@ All Staff Members:
 News Feed:
 @started(17-09-06 14:54)
  ✔ Add Featured Image @done (17-09-06 15:20)
- ☐ Add Query to loop through posts
- ☐ Define how Press Releases/Events are handled in WP.
- ☐ Add Styles
- ☐ Add AJAX
+ ✔ Add Query to loop through posts @done (17-09-13 09:12)
+ ✔ Define how Press Releases/Events are handled in WP. @done (17-09-13 09:14)
+ ✔ Add Styles @done (17-09-13 09:14)
+ ☐ Add pagination
+ ✔ Add AJAX to loop through posts @done (17-09-13 09:14)
+ ☐ Default posts to show @started
 
 News Post:
 
-
-
-
+All Staff Page: 
+ ☐ Order Staff Members using meta.
 

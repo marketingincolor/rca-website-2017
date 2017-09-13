@@ -1,65 +1,113 @@
 /**
- * Returns the button clicked on the news page.
- * @param  string templateURL origination path
- * @return string          
+ * Description:
+ *  
+ * Called when user clicks on a button on the blog page.
+ * Sets hidden input rca_query to equal the button that was clicked.
+ * Hidden input rca_query value is used for when the user clicks on the dropdown.
+ *
+ * @author  Doe
+ * @param {string} templateURL page the function is called on.
+ * @return {void}          
  */
-function ajaxFilterNews(templateURL){
+function filterPosts(templateURL) {
 
     $('.news-filter').on('click',function(){
 
         var newsButton = $(this);
 
-        // Start by removing state from any buttons.
+        // Start by removing state from news buttons.
         var allButtons = $('.news-filter');
         allButtons.removeClass('newsClick');
 
-        // e.preventDefault();
-
-        // Add State if we click on that button.
+        // Add State if we click on a button.
         $(this).addClass('newsClick');
-        var query = newsButton.attr('news_filter');
-        console.log(query);
+        var category = newsButton.attr('news_filter');
 
-        filterNewsPosts(templateURL, query, ajaxFilterYear());
+        filterNewsPosts(templateURL, category, ajaxFilterYear());
+        console.log('Set Category: ' + category);
 
+        // Add to hidden input
+        $('.rca_query').attr('value', category);
     });
-
 }
 
+
 /**
- * Returns the year selected on News Page
- * @param  string templateURL origination path.
- * @return int             year
+ * Description:
+ *
+ * Used for returning the category that was originally clicked on.
+ * If nothing has been clicked on the string "all" is returned to show all blog posts.
+ *
+ * @author Doe
+ * @return {string} Returns category stored in hidden input rca_query. This is saved using filterPosts().
  */
-function ajaxFilterYear(templateURL) {
+function getCategory() {
+    var category = $('.rca_query').val();
 
-    var select = document.getElementById("newsFilterSelect");
-    selectedNode = select.options[select.selectedIndex].value;
-    console.log(selectedNode);
-
-    var dropdown_query = selectedNode;
-    return dropdown_query;
-}
-
-
-/**
- * Gets data and filters
- * @return {[type]} [description]
-*/
-function filterNewsPosts(templateURL, query, dropdown_query) {
-
-    console.log('Template' + templateURL);
-    console.log('Query' + query);
-    console.log('Dropdown' + dropdown_query);
-
-    if(query == "") {
-        console.warn('RCA ERROR: No Query Found.');
+    if(category == "") {
+        console.warn('RCA Information: No Category Selected. Showing All Posts...');
         // IF NO QUERY IS FOUND LETS SHOW ALL
-        query = 'all';
+        category = 'all';
     }
 
+    return category;
+}
+
+/**
+ * Description:
+ *
+ * Determines the year for AJAX year dropdown.
+ * If user selects an option, that year is used. Otherwise, we use set beginning year through current year.
+ * In simple terms, returns all years or year selected.
+ *
+ * @author  Doe 
+ * @return {int} year
+ */
+function ajaxFilterYear() {
+
+    // Set Start Date and End Date for Year Array.
+    var date = new Date();
+    var beginningYear = 2016;
+    var currentYear = date.getFullYear();
+    var yearArray = new Array();
+
+    // Creates an Array of Years for posts to look for.
+    for($i=beginningYear; $i <= currentYear; $i++) {
+        yearArray.push($i);
+    }
+
+    // Gets selected item in dropdown.
+    var select = document.getElementById("newsFilterSelect");
+    selectedNode = select.options[select.selectedIndex].value;
+
+    if(selectedNode == "" || selectedNode == "Year Published") {
+        selectedNode = yearArray;
+    }
+
+    var dropdown_query = selectedNode;
+    console.log(dropdown_query);
+    return dropdown_query;
+
+}
+
+
+
+/**
+ * Description:
+ * 
+ * Ran from filterPosts() and select option on blog page.
+ * POSTS data to filter-posts.php and adds to page-news.php.
+ *
+ * @author  Doe
+ * @param {string} templateURL page the function was called on.
+ * @param {string} category Category stored in hidden input rca_query
+ * @param {array} dropdown_query array of years to query.
+ * @return {void} AJAX call to filter-posts.php
+*/
+function filterNewsPosts(templateURL, category, dropdown_query) {
+
     if(dropdown_query == "" ) {
-        console.warn('RCA ERROR: No dropdown query found.');
+        console.warn('RCA Information: No dropdown query found.');
     }
 
     var content = $('.post-container');
@@ -69,10 +117,16 @@ function filterNewsPosts(templateURL, query, dropdown_query) {
         $.ajax({
             url: templateURL + '/filter-posts.php',
             type: 'POST',
-            data: {query : query, dropdown_query : dropdown_query },
+            data: {category : category, dropdown_query : dropdown_query },
             success: function(response) {
                         content.html(response);
             }
         });
 
 }
+
+
+
+
+
+

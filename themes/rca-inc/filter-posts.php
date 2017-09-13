@@ -6,21 +6,21 @@ header("HTTP/1.1 200 OK");
 <?php
 	
 	// Retrieve Query Vars.
-	$query  = $_POST['query'];
+	$category  = $_POST['category'];
 	$dropdown_query = $_POST['dropdown_query'];
 
-	if ($dropdown_query == "Year Published") {
-		$dropdown_query == 2016;
-	}
-	var_dump($dropdown_query);
-	//var_dump($query);
+	var_dump($_POST);
+
+
+	//var_dump($dropdown_query);
+	var_dump($category);
   
   	// Change News Query Based on whats clicked in rca-filter-news.js
   	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	$news_query = new WP_Query( array(
     	'post_type' => 'post',
-    	'category_name' => $query,
+    	'category_name' => $category,
     	'posts_per_page' => 5,
     	'paged' => $paged,
     	'date_query' => array(
