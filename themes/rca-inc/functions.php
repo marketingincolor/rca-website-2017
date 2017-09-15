@@ -721,7 +721,10 @@ function get_team_members($role_type) {
 
   $args = array(
     'role' => $role_type,
-    'fields' => 'ID'
+    'fields' => 'ID',
+    'meta_key' => 'order',
+    'orderby' => 'meta_value',
+    'order' => 'ASC'
   );
 
   $team_query = new WP_User_Query( $args );

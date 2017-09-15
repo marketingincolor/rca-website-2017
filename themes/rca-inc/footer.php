@@ -108,6 +108,16 @@
 			});
 		</script>
 <!-- /Slick Sliders -->
+		<script>
 
+			$(document).ready(function() {
+				var post_count = $('.post_count');
+				console.log(post_count.attr('value') );
+				//console.log(Number(post_count).attr('value'));
+				if(post_count.attr('value') < 5) {
+					$('.next').hide();
+				}
+			});
+		</script>
 </body>
 </html>

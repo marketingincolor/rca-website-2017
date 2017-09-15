@@ -20,19 +20,19 @@ get_header(); ?>
 
 	<!-- Buttons -->
 	<div id="news-all-buttons" class="row">
-		<div class="small-12 medium-2 medium-offset-1 columns">
-			<button id="filter-news" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="News" news_filter="news">News</button>
+		<div class="small-10 small-offset-1 large-2 large-offset-1 columns">
+			<a href="#News"><button id="filter-news" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="News" news_filter="news">News</button></a>
 		</div>
-		<div class="small-12 medium-2 columns">
+		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
 			<button id="press" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Press Releases" news_filter="press-releases">Press Releases</button>
 		</div>
-		<div class="small-12 medium-2 columns">
+		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
 			<button id="events" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Events" news_filter="events">Events</button>
 		</div>
-		<div class="small-12 medium-2 columns">
+		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
 			<button id="all" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="" news_filter="all">View All</button>
 		</div>
-		<div class="small-12 medium-2 columns end" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" news_filter="Year Published">
+		<div class="small-10 small-offset-1 large-2 large-offset-0 columns end" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" news_filter="Year Published">
 
 			<!-- Dynamically Set Year in Dropdown -->
 			<select id="newsFilterSelect" class="" onclick="filterNewsPostsNoSpinner('<?php echo get_stylesheet_directory_uri(); ?>', getCategory(), ajaxFilterYear())">
@@ -49,13 +49,15 @@ get_header(); ?>
 			<!-- /Dynamically Set Year in Dropdown -->
 
 		</div>
-		<input class="rca_query" type="hidden" value="all">
+
+
 		<div class="spinner" style="display:none;">
 			<div class="double-bounce1"></div>
 			<div class="double-bounce2"></div>
 		</div>
+
 	</div>
-	<!-- /Buttons -->
+
 
 
 	<div class="post-container">
@@ -66,6 +68,29 @@ get_header(); ?>
 		</script>
 				
 	</div>
+
+	<!-- Buttons -->
+	<div class="row text-center">
+		<div class="small-12 columns">
+			<div class="pagination">
+				<div class="previous" style="display: inline-block;" onclick="rcaPrevious('<?php echo get_stylesheet_directory_uri() ?>', getCategory(), ajaxFilterYear())">< PREVIOUS</div>
+
+				<div class="rca-dots" style="display: inline-block;">
+
+				</div>
+
+				<div class="next" style="display: inline-block;" onclick="rcaNext('<?php echo get_stylesheet_directory_uri()?>', getCategory(), ajaxFilterYear())">
+					NEXT ></div>
+			</div>
+		</div>
+	</div>
+	<!-- /Buttons -->
+
+		<!-- Hidden Inputs -->
+		<input class="rca_query" type="hidden" value="all">
+		<input class="rca_offset" type="hidden" value="0">
+		<input class="rca_total_posts" type="hidden" value="0">
+		<!-- /Hidden Inputs -->
 
 
 <?php

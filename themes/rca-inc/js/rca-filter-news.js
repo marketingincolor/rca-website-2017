@@ -97,6 +97,13 @@ function ajaxFilterYear() {
 */
 function filterNewsPosts(templateURL, category, dropdown_query) {
 
+    // Offset will always be 0 when we click on top level button
+    var offset = 0;
+    var counter = $('.rca_offset');
+    var content = $('.post-container');
+    var counterValue = offset;
+    counter.attr('value', counterValue);
+
     // If we don't have a category log an error to the console.
     if(category == "") {
         console.warn('RCA Information: No Category Selected. Showing All Posts...');
@@ -108,9 +115,10 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
         console.warn('RCA Information: No dropdown query found.');
     }
 
-    var content = $('.post-container');
     content.hide();
 
+
+    console.log('Offset: ' + offset);
 
         $.ajax({
             url: templateURL + '/filter-posts.php',
@@ -118,14 +126,12 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
             beforeSend: function() {
                 $('.spinner').fadeIn(500); 
             },
-            data: {category : category, dropdown_query : dropdown_query },
+            data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
             success: function(response) {
                         content.html(response).fadeIn(1000);
             },
             complete: function() { $('.spinner').fadeOut(500); }
         });
-
-
 }
 
 /**
@@ -154,7 +160,7 @@ function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
     }
 
     var content = $('.post-container');
-    content.hide();
+    //content.hide();
 
 
         $.ajax({
@@ -184,7 +190,6 @@ function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
 function defaultNewsFilter(templateURL, category, dropdown_query) {
 
     var content = $('.post-container');
-
     $('#all').addClass('newsClick');
 
     $.ajax({
@@ -197,5 +202,71 @@ function defaultNewsFilter(templateURL, category, dropdown_query) {
         },
         complete: function() { $('.spinner').fadeOut(500); }
     });
+
+}
+
+/**
+ * Description:
+ * Used for retrieving posts on next button clicks.
+ *
+ * @author  Doe
+ * @param  {string} templateURL    [Page the function was called on]
+ * @param  {string} category       [Category that's being filtered]
+ * @param  {int} dropdown_query [Year that's being filtered]
+ * @return {void}                [AJAX call]
+ */
+function rcaNext(templateURL, category, dropdown_query) {
+    var offset = 5;
+    var counter = $('.rca_offset');
+    var content = $('.post-container');
+    var counterValue = Number(counter.val()) + Number(offset);
+    counter.attr('value', counterValue);
+
+    $.ajax({
+        url: templateURL + '/filter-posts.php',
+        type: 'POST',
+        beforeSend: function() {
+            $('.spinner').fadeIn(500); 
+        },
+        data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
+        success: function(response) {
+                    content.html(response).fadeIn(1000);
+        },
+        complete: function() { $('.spinner').fadeOut(500); }
+    });
+}
+
+/**
+ * Description:
+ * Used for retrieving posts on previous button clicks.
+ * 
+ * @param  {string} templateURL    [description]
+ * @param  {stirng} category       [description]
+ * @param  {string} dropdown_query [description]
+ * @return {void}                  [description]
+ */
+function rcaPrevious(templateURL, category, dropdown_query) {
+    var offset = 5;
+    var counter = $('.rca_offset');
+    var content = $('.post-container');
+    var counterValue = Number(counter.val()) - Number(offset);
+    counter.attr('value', counterValue);
+    $.ajax({
+        url: templateURL + '/filter-posts.php',
+        type: 'POST',
+        beforeSend: function() {
+            $('.spinner').fadeIn(500); 
+        },
+        data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
+        success: function(response) {
+                    content.html(response).fadeIn(1000);
+        },
+        complete: function() { $('.spinner').fadeOut(500); }
+    });
+}
+
+function rca_get_dots(category) {
+
+
 
 }
