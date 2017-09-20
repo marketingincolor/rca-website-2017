@@ -48,13 +48,13 @@
 
 									$block = '<div id="location-block" class="row text-left">';
 									$block .= '<div class="small-6 columns">';
-									$block .= '<img src="'. get_the_post_thumbnail_url() . '"/>';
+									$block .= '<a href="https://maps.google.com/?q=' . $location_address . '" target="_blank" title="Directions"><img src="'. get_the_post_thumbnail_url() . '"/></a>';
 									$block .= '</div>';
 									$block .= '<div class="small-6 columns">';
 									$block .= '<div class="location-name">' . get_the_title() . '</div>';
 
 									if($location_address):
-										$block .= '<div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i> <p>' . $location_address . '</p></div>';
+										$block .= '<a href="https://maps.google.com/?q=' . $location_address . '" target="_blank"><div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i> <p>' . $location_address . '</p></div></a>';
 									endif;
 									if($location_phone):
 										$block .= '<div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i> ' . $location_phone . '</div>';
@@ -108,7 +108,7 @@
 							$block .= '<div class="accordion-content" data-tab-content>';
 							$block .= '<div class="row"><div class="small-10 small-offset-1 columns">';
 							if($location_address):
-								$block .= '<div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i> <p>' . $location_address . '</p></div>';
+								$block .= '<a href="https://maps.google.com/?q=' . $location_address . '" target="_blank"><div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i> <p>' . $location_address . '</p></div></a>';
 							endif;
 							if($location_phone):
 								$block .= '<div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i> ' . $location_phone . '</div>';

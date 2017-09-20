@@ -7,7 +7,8 @@ get_header(); ?>
 	
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
-		<div id="featured-img" style="background: url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
+		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
+	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
 				<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
 		</div>
 	</div>
@@ -34,16 +35,16 @@ get_header(); ?>
 	<div id="share-bar" class="row expanded">
 		<div class="row text-center">
 			<p>Share on Social Media</p>
-			<i class="fa fa-facebook" aria-hidden="true"></i>
-			<i class="fa fa-twitter" aria-hidden="true"></i>
-			<i class="fa fa-linkedin" aria-hidden="true"></i>
-			<i class="fa fa-envelope" aria-hidden="true"></i>
-			<i class="fa fa-share" aria-hidden="true"></i>
+			<a href="" title="RCA Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="" title="RCA Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a href="" title="RCA LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+			<a href="" title="RCA eMail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+			<a href="" title="Share"><i class="fa fa-share" aria-hidden="true"></i></a>
 		</div>
 	</div>
 	
 	<div id="contact-learn-more-wrapper">
-		<?php get_template_part('template-parts/section', 'learn-more'); ?>
+		<?php get_template_part('template-parts/section', 'learn-more-form-container-white'); ?>
 	</div>
 <?php
 //get_sidebar();

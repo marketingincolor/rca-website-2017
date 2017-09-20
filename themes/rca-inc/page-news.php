@@ -24,13 +24,13 @@ get_header(); ?>
 			<a href="#News"><button id="filter-news" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="News" news_filter="news">News</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<button id="press" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Press Releases" news_filter="press-releases">Press Releases</button>
+			<a href="#Press-Releases"><button id="press" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Press Releases" news_filter="press-releases">Press Releases</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<button id="events" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Events" news_filter="events">Events</button>
+			<a href="#Events"><button id="events" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="Events" news_filter="events">Events</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<button id="all" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="" news_filter="all">View All</button>
+			<a href="#View-All"><button id="all" class="news-filter" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" title="" news_filter="all">View All</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns end" onclick="filterPosts('<?php echo get_stylesheet_directory_uri(); ?>')" news_filter="Year Published">
 
@@ -60,7 +60,7 @@ get_header(); ?>
 
 
 
-	<div class="post-container">
+	<div id="all-posts" class="post-container">
 		<script>
 		$(document).ready(function() {
 			defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', 'all', ajaxFilterYear());

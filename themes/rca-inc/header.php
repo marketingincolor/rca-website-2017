@@ -56,6 +56,8 @@
 					<?php the_custom_logo(); ?>
 				</div>
 			</div>
+			<!--  -->
+
 			<!-- PHONE ON MOBILE BUTTON -->
 			<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
 
@@ -72,16 +74,16 @@
 			<div id="top-menu">
 				<div id="top-menu" class="row">
 					<div class="large-12 columns">
-						<ul id="mega-menu-container" class="dropdown menu show-for-large" data-dropdown-menu>
+						<ul id="mega-menu-container" class="dropdown menu show-for-large" data-dropdown-menu> 
 							<li class="mega-menu">
-								<a href="#">Medical Devices</a>
+								<a href="<?php echo home_url('/medical-devices/'); ?>">Medical Devices</a>
 									<ul class="menu">
 										<li>
 											<div class="row">
 												<div class="small-8 columns">
 
 													<div class="medium-6 columns">
-														<h3>Regulatory Affairs</h3>
+														<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Regulatory Affairs</a></h3>
 														<?php
 
 														wp_nav_menu( 
@@ -118,13 +120,13 @@
 										</li>
 									</ul>
 								</li>
-								<li><a href="#">Pharmaceutical</a></li>
-								<li><a href="#">Additional Services</a></li>
+								<li><a href="<?php echo get_permalink( get_page_by_path( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a></li>
+								<li><a href="<?php echo get_permalink( get_page_by_path('Additional Services' ) ); ?>">Additional Services</a></li>
 
-								<li><a href="#">About</a></li>
+								<li><a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a></li>
 								<li><a href="<?php echo home_url('/news/' );?>">News</a>
 								</li>
-								<li class="contact-menu-item"><a href=""><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
+								<li class="contact-menu-item" style="float:right;"><a href=""><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
 							</li>
 						</ul>	 	
 					</div>
@@ -188,7 +190,7 @@
 	</div>
 		<div id="bottom-nav-wrapper">
 			<li>
-				<a href="#">Medical Devices</a>
+				<a href="<?php echo get_permalink( get_page_by_path( 'Medical Devices' ) ); ?>">Medical Devices</a>
 		<!-- 		<ul class="menu vertical nested">
 					<li><a href="#">Item 1Ai</a></li>
 					<li><a href="#">Item 1Aii</a></li>
@@ -240,13 +242,13 @@
 				</ul>
 			</li>
 			<li>
-					<a href="#">Pharmaceutical</a>
+					<a href="<?php echo get_permalink( get_page_by_path( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a>
 		<!-- 			<ul class="menu vertical nested">
 					
 					</ul> -->
 			</li>
-			<li><a href="#">Additional Services</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="<?php echo get_permalink( get_page_by_path( 'Additional Services' ) ); ?>">Additional Services</a></li>
+			<li><a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a></li>
 			<li><a href="#">News</a></li>
 			
 

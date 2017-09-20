@@ -1,7 +1,7 @@
 <?php 
 
 ?>
-<div id="learn-more-form-container">
+<div id="learn-more-form-container-blue" class="">
 		<div class="row" >
 			<div class="small-10 small-offset-1 columns text-center">
 				<h1>I'm interested in Learning More About RCA</h1>
@@ -47,6 +47,12 @@
 						<div class="large-12 columns">
 							<label for="">&#xf086; Comments/Questions</label>
 							<textarea name="" id="" cols="30" rows="4"></textarea>
+						</div>
+						<div class="large-6 columns">
+							 <input type="checkbox" name="vehicle" value="Car" checked="checked"> Here is a checkbox<br>
+						</div>
+						<div class="large-6 columns text-right">
+							<p>*=Required</p>
 						</div>
 						<div class="large-12 columns">
 							<input type="submit" value="Submit">

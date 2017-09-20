@@ -82,7 +82,7 @@
 					echo '<img src="' . $img_array[$i]['url'] . '" />';
 					echo '<h2>' . $title_array[$i] . '</h2>';
 					echo '<p>' . $content_array[$i] . '</p>';
-					echo '<a href="'.$button_array[$i].'"><button>Learn More</button></a>';
+					echo '<a href="'.home_url("/$button_array[$i]/").'"><button>Learn More</button></a>';
 					echo '</div>';
 				}
 				echo '</div>';
@@ -145,8 +145,8 @@
 							while($case_studies ->have_posts()) : $case_studies->the_post();
 
 								echo '<div class="individual-case-study rca">';
-									echo '<h3 class="text-left">' . get_the_title() . '</h3>';
-									echo '<p class="text-left">' . wp_trim_words( get_the_content(), 40, '...</br><a href="#" title="Read More" class="read-more">Read More</a>' ) . '</p>';
+									echo '<h3 class="text-left"><a href="' . get_the_permalink() .'">' . get_the_title() . '</a></h3>';
+									echo '<p class="text-left">' . wp_trim_words( get_the_content(), 40, '...</br><a href="'. get_post_permalink() .'" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 								echo '</div>';
 							endwhile;
 
@@ -189,8 +189,8 @@
 										<div class="small-12 medium-6 columns">
 								<?php
 										echo '<div class="individual-case-study rca">';
-											echo '<h3 class="text-left">' . get_the_title() . '</h3>';
-											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 20, '...</br><a href="#" title="Read More" class="read-more">Read More</a>' ) . '</p>';
+											echo '<h3 class="text-left"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 20, '...</br><a href="' . get_post_permalink() . '" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 										echo '</div>';
 										echo '</div>';
 									endwhile;
@@ -217,7 +217,7 @@
 	<!-- END CASE STUDIES -->
 
 	<!-- LEARN MORE -->
-	<?php get_template_part('template-parts/section', 'learn-more'); ?>
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<!-- /LEARN MORE -->
 
 	<!-- NEWS -->
