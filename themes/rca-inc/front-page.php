@@ -36,22 +36,24 @@ get_header(); ?>
 			?>
 
 		<style>
-			.orbit-slide{
-				padding: 30px 0;
-			}
-			.slide-meta{
-				/*position: absolute;*/
-				left: 0;
-				padding: 30px;
-				background-color: rgba(196,97,43,0.8);
-				color: #FFF
-			}
-			.slide-meta p{
-				margin-bottom: 30px;
-				font-size: 22px;
-				font-weight: 700;
-			}
-			.slide-meta a{
+		  .owl-carousel .item{
+		  	background-repeat: no-repeat;
+		  	background-position: center center;
+		  	background-size: cover;
+		  	padding: 30px 0;
+		  }
+		  .owl-carousel .slide-meta{
+		  	left: 0;
+		  	padding: 30px;
+		  	background-color: rgba(196,97,43,0.8);
+		  	color: #FFF
+		  }
+		  .owl-carousel .slide-meta p{
+		  	margin-bottom: 30px;
+		  	font-size: 22px;
+		  	font-weight: 700;
+		  }
+		  .owl-carousel .slide-meta a{
 				color: #FFF;
 				border: 2px solid #FFF;
 				padding: 5px 15px;
@@ -59,59 +61,8 @@ get_header(); ?>
 		  }
 		</style>
 
-		<div class="orbit" id="home-top-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
-		  <div class="orbit-wrapper">
-		    <ul class="orbit-container">
-		      <li class="is-active orbit-slide" style="background-image: url(http://fillmurray.com/1500/501);">
-		        <div class="row">
-		        	<div class="small-4 columns">
-		        		<div class="slide-meta">
-		        			<p>Sign up our Managing Challenging Submissions Webinar</p>
-		        			<p class="text-center"><a href="#!">Sign Up Here</a></p>
-		        		</div>
-		        	</div>
-		        </div>
-		      </li>
-		      <li class="orbit-slide" style="background-image: url(http://fillmurray.com/1500/500);">
-		        <div class="row">
-		        	<div class="small-4 columns">
-		        		<div class="slide-meta">
-		        			<p>Sign up our Managing Challenging Submissions Webinar</p>
-		        			<p class="text-center"><a href="#!">Sign Up Here</a></p>
-		        		</div>
-		        	</div>
-		        </div>
-		      </li>
-		      <li class="orbit-slide" style="background-image: url(http://fillmurray.com/1500/499);">
-		        <div class="row">
-		        	<div class="small-4 columns">
-		        		<div class="slide-meta">
-		        			<p>Sign up our Managing Challenging Submissions Webinar</p>
-		        			<p class="text-center"><a href="#!">Sign Up Here</a></p>
-		        		</div>
-		        	</div>
-		        </div>
-		      </li>
-		    </ul>
-		  </div>
-
-			<?php //endwhile; wp_reset_postdata(); ?>
-
-		  <nav class="orbit-bullets">
-
-			  <?php 
-			  	// use total post count to determine number of dots
-			  	#for ($i=0; $i < $slider_count; $i++) { 
-			  		
-			  ?>
-			  <!-- <button class="<?php //if($i==0){echo 'is-active';} ?>" data-slide="<?php #echo $i; ?>"></button> -->
-		    <?php //} ?>
-			  
-		    <button class="is-active" data-slide="0"></button>
-		    <button data-slide="1"></button>
-		    <button data-slide="2"></button>
-		  </nav>
-		</div>
+		<?php echo do_shortcode('[rca-top-slider category="front-page-top" items=1 autoPlay="false" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
+		
 	</section>
 	<!-- /TOP SLIDER -->
 

@@ -20,6 +20,79 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
+#learn-more-form-container h1 {
+	margin-bottom: 7%;
+}
+#learn-more-form-container .large-4,#learn-more-form-container .large-12 {
+	position: relative;
+}
+#learn-more-form-container i {
+	position: absolute;
+	top: 10px;
+	left: 25px;
+	color: rgba(255,255,255,0.4);
+}
+#learn-more-form-container input {
+	border-radius: 0px;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	padding-left: 40px;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.4);
+}
+#learn-more-form-container input:valid{
+	border-bottom: 1px solid #FFF;
+	color: #FFF;
+}
+#learn-more-form-container input[type=submit]{
+	transition: all 0.25s ease-in-out;
+}
+#learn-more-form-container input[type=submit]:hover{
+	color: #1a365d;
+	background-color: #FFF;
+}
+#learn-more-form-container textarea{
+	resize: none;
+	border:none;
+	color: #FFF;
+	box-shadow: none;
+}
+#learn-more-form-container textarea:focus{
+	background-color: #76869e;
+}
+#learn-more-form-container textarea:valid{
+	border: 1px solid #FFF;
+	background-color: transparent;
+}
+#learn-more-form-container label i{
+	position: static;
+	padding-left: 0.5rem;
+	margin-right: 0.7rem
+}
+#learn-more-form-container label{
+	color: rgba(255,255,255,0.4);
+	font-size: 1rem;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+#learn-more-form-container ::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container ::-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container :-ms-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container :-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
 
 /*TODO: 
 
