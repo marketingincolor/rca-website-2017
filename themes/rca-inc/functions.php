@@ -405,11 +405,16 @@ function rca_top_slider($atts, $content = null) {
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
+        $result .= '<div class="item">';
         if ($img_src[0]) {
-          $result .= '<div class="item" style="background-image: url('.$img_src[0].')">';
-          $result .= '<div class="row">';
+            $result .= '<div>';
             if (!empty($meta_link)) {
                 $result .= '<a href="' . $meta_link . '">';
+            }
+            if ($lazyLoad) {
+                $result .= '<img class="lazyOwl" title="' . get_the_title() . '" data-src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
+            } else {
+                $result .= '<img title="' . get_the_title() . '" src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
             }
             if (!empty($meta_link)) {
                 $result .= '</a>';
@@ -418,10 +423,12 @@ function rca_top_slider($atts, $content = null) {
             // Add image overlay with hook
             $slide_title = get_the_title();
             $slide_content = get_the_content();
-            $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
-            $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="#!">Sign Up Here</a></p></div>';
+            $img_overlay = '<div class="owl-carousel-item-imgoverlay">';
+            $img_overlay .= '<div class="owl-carousel-item-imgtitle">' . $slide_title . '</div>';
+            $img_overlay .= '<div class="owl-carousel-item-imgcontent">' . wpautop($slide_content) . '</div>';
+            $img_overlay .= '</div>';
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
-            $result .= '</div></div>';
+            $result .= '</div>';
         } else {
             $result .= '<div class="owl-carousel-item-text">' . get_the_content() . '</div>';
         }
