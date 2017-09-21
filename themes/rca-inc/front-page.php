@@ -58,10 +58,11 @@ get_header(); ?>
 				font-size: 16px;
 		  }
 		</style>
+
 		<div class="orbit" id="home-top-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
 		  <div class="orbit-wrapper">
 		    <ul class="orbit-container">
-		      <li class="is-active orbit-slide" style="background-image: url(/wp-content/uploads/2017/08/RCA_DESKTOP_HOMEPAGE_SLIDER_BG.jpg);">
+		      <li class="is-active orbit-slide" style="background-image: url(http://fillmurray.com/1500/501);">
 		        <div class="row">
 		        	<div class="small-4 columns">
 		        		<div class="slide-meta">
@@ -81,7 +82,7 @@ get_header(); ?>
 		        	</div>
 		        </div>
 		      </li>
-		      <li class="orbit-slide" style="background-image: url(/wp-content/uploads/2017/08/RCA_DESKTOP_HOMEPAGE_SLIDER_BG.jpg);">
+		      <li class="orbit-slide" style="background-image: url(http://fillmurray.com/1500/499);">
 		        <div class="row">
 		        	<div class="small-4 columns">
 		        		<div class="slide-meta">
@@ -100,10 +101,10 @@ get_header(); ?>
 
 			  <?php 
 			  	// use total post count to determine number of dots
-			  	for ($i=0; $i < $slider_count; $i++) { 
+			  	#for ($i=0; $i < $slider_count; $i++) { 
 			  		
 			  ?>
-			  <!-- <button class="<?php //if($i==0){echo 'is-active';}" data-slide="<?php echo $i; ?>"></button> -->
+			  <!-- <button class="<?php //if($i==0){echo 'is-active';} ?>" data-slide="<?php #echo $i; ?>"></button> -->
 		    <?php //} ?>
 			  
 		    <button class="is-active" data-slide="0"></button>
@@ -135,8 +136,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-
 get_footer();
-
 ?>
-

@@ -27,6 +27,31 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+#webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
+#your-expert-presenters #presenter-block:not(:last-child) { margin-bottom: 3rem; }
+#your-expert-presenters img, #your-expert-presenters h3 { display: inline-block;  }
+#your-expert-presenters h3 { margin-bottom: 0rem; font-family: 'roboto', sans-serif; color: #2b2b2b; font-size: 1rem; font-weight: bold; }
+#your-expert-presenters { padding: 5rem 0rem; }
+#your-expert-presenters #title h2 { margin-bottom: 3rem; font-size: 1.375rem; color: #2b2b2b; font-family: 'roboto', sans-serif; font-weight: bold; }
+#your-expert-presenters { background-color: #f8f7f5; }
+#your-expert-presenters img { border-radius: 50%; }
+
+#webinar-title h1 { font-family: 'Roboto', sans-serif; color: #2b2b2b; font-size: 1.375rem; font-style: normal; font-weight: bold; }
+#webinar-form-block { background: linear-gradient(to bottom, #f8f7f5 50%, #fff 50%); }
+#webinar-form-block p { color: #ffffff;  }
+#webinar-form-block #form { background-color: #236192; padding: 2rem 0rem; }
+#webinar-form-block h1 { color: #ffffff; }
+
+
+#webinar-information-block > div > div:last-child { border-right: none; }
+#webinar-information-block > div > div { border-right: 2px solid #9d938b; }
+#webinar-information-block .meta { color: #2b2b2b; margin-bottom: 0rem; }
+#webinar-information-block { background-color: #f8f7f5; padding: 3.5rem 0rem; }
+#webinar-information-block i { color: #236192; padding: 1.5rem 0rem; }
+#webinar-information-block .when-block h2,
+#webinar-information-block .who-block h2,
+#webinar-information-block .where-block h2 { font-size: 1.375rem; color: #2b2b2b; font-family: 'Roboto', sans-serif; font-weight: bold; }
+
 #link-column a { color: #2b2b2b; }
 
 #link-column .service-bullets { 

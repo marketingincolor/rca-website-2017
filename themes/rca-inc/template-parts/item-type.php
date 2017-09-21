@@ -26,8 +26,8 @@ switch($termName) {
 		include 'white-paper.php';
 	break;
 
-	case 'Visual Resources':
-		include 'visual-resources.php';
+	case 'Webinars':
+		include 'webinars.php';
 	break;
 
 	default:

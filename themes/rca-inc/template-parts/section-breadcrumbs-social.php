@@ -2,12 +2,20 @@
 /**
  * Purpose: Adds breadcrumbs and social links to pages that need it.
  */
+
+global $post;
+$terms = get_the_terms($post->id, 'expertise');
+
+// Returns this term name
+$termName = $terms[0]->name;
 ?>
 
 <div class="row">
 	<div class="small-12 medium-6 columns text-center medium-text-left">
 		<div id="breadcrumbs">
-			<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+			<?php if($termName != 'Webinars'): ?>
+				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="small-12 medium-6 columns text-right show-for-medium">
