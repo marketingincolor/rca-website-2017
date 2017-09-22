@@ -30,6 +30,9 @@ switch($termName) {
 		include 'webinars.php';
 	break;
 
+	case 'Published Articles':
+	  include 'published-articles.php';
+
 	default:
 	break;
 }
