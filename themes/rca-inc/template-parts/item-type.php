@@ -33,6 +33,9 @@ switch($termName) {
 	case 'Published Articles':
 	  include 'published-articles.php';
 
+	case 'Visual Resources':
+	  include 'visual-resources.php';
+
 	default:
 	break;
 }
