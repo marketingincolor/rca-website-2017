@@ -20,7 +20,7 @@ $article_link_text = get_field('article_link_text');
 	</div>
 
 	<!-- Title/Date -->
-	<div id="webinar-title" class="row">
+	<div class="row">
 		<div class="small-10 small-offset-1 columns text-left">
 			<h1><?php the_title(); ?></h1>
 			<p class="date"><?php the_date('F d, Y') ?></p>
@@ -29,7 +29,7 @@ $article_link_text = get_field('article_link_text');
 	<!-- /Title/Date -->
 
 	<!-- Content -->
-	<div id="webinar-content" class="row">
+	<div class="row">
 		<div class="small-10 small-offset-1 columns" >
 			<p><?php echo wp_trim_words(get_the_content(),70,'...'); ?></p>
 			<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto"><?php echo $article_link_text; ?></button></a>
