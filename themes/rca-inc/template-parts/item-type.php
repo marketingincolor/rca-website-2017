@@ -38,6 +38,10 @@ switch($termName) {
 	  include 'visual-resources.php';
 	  break;
 
+	case 'Case Studies':
+	  include 'case-studies.php';
+	  break;
+
 	default:
 	break;
 }
