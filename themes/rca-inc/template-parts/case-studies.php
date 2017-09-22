@@ -7,8 +7,9 @@
 	$background_title = get_field('background_title');
 	$solution_title   = get_field('solution_title');
 	$solution_text    = get_field('solution_text');
-	$result_title   = get_field('result_title');
-	$result_text    = get_field('result_text');
+	$result_title     = get_field('result_title');
+	$result_text      = get_field('result_text');
+	$featured_quote   = get_field('featured_quote');
 ?>
 <div id="all-expertise-content">
 
@@ -31,15 +32,15 @@
 	<!-- Content -->
 	<div id="expertise-content" class="row case-study-content">
 		<div class="small-10 small-offset-1 columns">
-			<h3>sdvfsvdfv<?php echo $background_title; ?></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae repellendus omnis iure expedita quae sunt? Fuga eos quasi sequi distinctio ipsum iure illo dolorem expedita. Doloribus deleniti quam nobis provident.</p>
-			<h3>sdvfsdvf<?php echo $solution_title; ?></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nostrum suscipit vitae, minima, debitis ex. Laborum deserunt, aperiam harum molestiae vitae quod, provident similique, explicabo optio animi suscipit totam laboriosam.</p>
+			<h3><?php echo $background_title; ?></h3>
+			<p><?php echo $background_text; ?></p>
+			<h3><?php echo $solution_title; ?></h3>
+			<p><?php echo $solution_text; ?></p>
 			<div class="case-study-quote">
-				<p>"RCA understood our needs and helped design a CAPA process that aligns with industry best practices and takes us to the next level."</p>
+				<p><?php echo $featured_quote; ?></p>
 			</div>
-			<h3>sdvfsdv<?php echo $result_title; ?></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, totam sunt tenetur aliquam deleniti culpa dignissimos, doloribus nulla, maiores facere, architecto pariatur fuga asperiores! Unde iste, magni officiis veniam error?</p>
+			<h3><?php echo $result_title; ?></h3>
+			<p><?php echo $result_text; ?></p>
 		</div>
 	</div>
 	<!-- /Content -->
@@ -68,5 +69,11 @@
 		color: #FFF;
 		background-color: #1a365d;
 		display: inline;
+	}
+	.case-study-quote p{
+		font-weight: 700;
+		font-style: italic;
+		font-size: 1.25rem;
+		margin-bottom: 0;
 	}
 </style>
