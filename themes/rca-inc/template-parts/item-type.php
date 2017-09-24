@@ -24,11 +24,23 @@ switch($termName) {
 
 	case 'White Papers':
 		include 'white-paper.php';
-	break;
+	  break;
 
 	case 'Webinars':
 		include 'webinars.php';
-	break;
+	  break;
+
+	case 'Published Articles':
+	  include 'published-articles.php';
+	  break;
+
+	case 'Visual Resources':
+	  include 'visual-resources.php';
+	  break;
+
+	case 'Case Studies':
+	  include 'case-studies.php';
+	  break;
 
 	default:
 	break;
