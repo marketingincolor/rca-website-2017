@@ -38,7 +38,6 @@ function simple_breadcrumb() {
 					}
 					if ( $post->post_type == 'items') {
 						echo $termName;
-						echo $separator;
 					}
 				echo $separator;
 				the_title();

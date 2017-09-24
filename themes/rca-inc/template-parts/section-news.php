@@ -1,59 +1,133 @@
-<?php ?>
-<!-- NEWS -->
-<div id="news-section" class="row expanded">
-	<div class="text-center">
-			<?php
-			ob_start(); 
+<?php
+/* Template: News Include */
+?>
 
-			$unique         = wpsisac_get_unique();
-			$post_type      = 'slick_slider';
-			$orderby        = 'post_date';
-			$order          = 'DESC';  
-			$cat = '3';     
+		<!-- NEWS SMALL -->
+		<div id="news-container" class="hide-for-medium">
+			<div style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/news-section.jpg';?>'); background-size: cover; height: auto; padding: 2.5rem 0rem;">
+				
+				<div class="row">
+					<div class="small-12 columns text-center" style="color: white;">
+						<h3>News</h3>
+					</div>
+				</div>
+				
+				<div id="news-snippets-wrapper" class="row text-center">
+						
+						<?php
+							wp_reset_postdata();
+							$category_id = get_cat_ID('news');
 
-			$args = array ( 
-			    'post_type'      => $post_type, 
-			    'orderby'        => $orderby, 
-			    'order'          => $order,
-			    'posts_per_page' => 6,
-			    'category' => ""  
-			   
-			);
+							$args = array(
+								'post_type' => 'post',
+								'cat' => $category_id,
+								// 'orderby' => 'date',
+								// 'order' => 'ASC',
+								'posts_per_page' => 1
 
-			if($cat != ""){
-			    $args['tax_query'] = array( array( 'taxonomy' => 'wpsisac_slider-category', 'field' => 'id', 'terms' => $cat) );
-			}        
-			$query      = new WP_Query($args);
-			//var_dump($query);
-			if ( $query->have_posts() ) :
+							);
 
-			$post_count = $query->post_count;   
-			?>
+							$news_query = new WP_Query($args);
 
-			<div class="news-slider">
-			    <?php while ( $query->have_posts() ) : $query->the_post();
-			    $sliderurl = get_post_meta( get_the_ID(),'wpsisac_slide_link', true );
-			    $sliderimage_size = "thumbnail";
+							if ( $news_query->have_posts() ) { 
+								while ( $news_query->have_posts() ) {
+									$news_query->the_post();
+									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
+									#the_title();
+									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo '</div>';
+								}
+							}
 
-			    echo    '<div>';
-			    echo    the_post_thumbnail('thumbnail'); 
-			    echo    '</div>';
-			    endwhile;
-			    ?>
-			</div>
-			<div class="news-slider-overlay no-color-overlay" style="position:absolute;">
-			    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			    <div>
-			        <h1><?php the_title(); ?></h1>
-			        <p><?php the_content(); ?></span>
-			    </div>
-			    <?php endwhile;
-			    ?>
-			</div>
-			    <?php
-			    endif;
-			    wp_reset_query(); 
-			?>
-	</div>
-</div>
-<!-- END NEWS -->
+						?>
+
+				</div>
+			</div>		
+		</div>
+		<!-- /NEWS SMALL -->
+
+		<!-- NEWS MEDIUM-->
+		<div id="news-container" class="show-for-medium hide-for-large">
+			<div style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/news-section.jpg';?>'); background-size: cover; height: auto; padding: 2.5rem 0rem;">
+				
+				<div class="row">
+					<div class="small-12 columns text-center" style="color: white;">
+						<h3>News</h3>
+					</div>
+				</div>
+
+				<div id="news-snippets-wrapper" class="row text-center">
+						
+						<?php
+							wp_reset_postdata();
+							$category_id = get_cat_ID('news');
+
+							$args = array(
+								'post_type' => 'post',
+								'cat' => $category_id,
+								// 'orderby' => 'date',
+								// 'order' => 'ASC',
+								'posts_per_page' => 2
+
+							);
+
+							$news_query = new WP_Query($args);
+
+							if ( $news_query->have_posts() ) { 
+								while ( $news_query->have_posts() ) {
+									$news_query->the_post();
+									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
+									#the_title();
+									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo '</div>';
+								}
+							}
+						?>
+				</div>
+			</div>		
+		</div>
+		<!-- /NEWS MEDIUM -->
+
+		<!-- NEWS LARGE -->
+		<div id="news-container" class="show-for-large">
+			<div style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/news-section.jpg';?>'); background-size: cover; height: auto; padding: 2.5rem 0rem;">
+				
+				<div class="row">
+					<div class="small-12 columns text-center" style="color: white;">
+						<h3>News</h3>
+					</div>
+				</div>
+				
+				<div id="news-snippets-wrapper" class="row text-center">
+						
+						<?php
+							wp_reset_postdata();
+							$category_id = get_cat_ID('news');
+
+							$args = array(
+								'post_type' => 'post',
+								'cat' => $category_id,
+								// 'orderby' => 'date',
+								// 'order' => 'ASC',
+								'posts_per_page' => 3
+
+							);
+
+							$news_query = new WP_Query($args);
+
+							if ( $news_query->have_posts() ) { 
+								while ( $news_query->have_posts() ) {
+									$news_query->the_post();
+									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
+									#the_title();
+									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo '</div>';
+								}
+							}
+
+						?>
+
+				</div>
+			</div>		
+		</div>
+		<!-- /NEWS LARGE -->

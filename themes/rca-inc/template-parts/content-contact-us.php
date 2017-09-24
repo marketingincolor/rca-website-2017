@@ -99,9 +99,9 @@
 						// Post Content here
 						for($i=0;$i<count($locations); $i++) {
 							$location_address = get_field('location_address');
-							$location_phone = get_field('location_phone');
-							$location_fax = get_field('location_fax');
-							$location_email = get_field('location_email');
+							$location_phone   = get_field('location_phone');
+							$location_fax     = get_field('location_fax');
+							$location_email   = get_field('location_email');
 
 							$block = '<li class="accordion-item" data-accordion-item>';
 							$block .= '<a href="#" class="accordion-title location-name">' . get_the_title() . '</a>';
