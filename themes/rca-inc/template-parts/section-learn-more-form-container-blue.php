@@ -96,7 +96,10 @@
 							<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
 						</div>
 						<div class="large-6 columns">
-							 <input type="checkbox" name="agree" value="Car" checked="checked"> I agree to receive emails from RCA<br>
+							<div class="checkbox-group">
+							  <input id="agree" type="checkbox" name="agree" value="Car" checked="checked">
+							  <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
+							</div>
 						</div>
 						<div class="large-6 columns text-right">
 							<p>*=Required</p>
