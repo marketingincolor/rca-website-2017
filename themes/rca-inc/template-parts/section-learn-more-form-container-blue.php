@@ -144,11 +144,57 @@
 
 		//Don't send form if it has errors, otherwise send
 		$('#form-submit').on('click',function(e){
-		  if ($('div.checkbox-group.required :checkbox:checked').length == 0){
-		  	showError('Please check at least one industry');
-		  	$('.industry-label').css({'color':'rgba(255,0,42,1)'})
-		  	e.preventDefault();
+		  if($('#form-first-name').val() == ''){ 
+		  	showError('Please enter your first name');
+		  	$('#form-first-name').addClass("formInvalid");
+		  	$('#form-first-name').focus();
 		  	return false;
+		  } else if($('#form-last-name').val() == ''){ 
+		  	showError('Please enter your last name');
+		  	$('#form-last-name').focus();
+		  	return false;
+		  } else if($('#form-phone').val() == ''){ 
+		  	showError('Please enter your phone number');
+		  	$('#form-phone').focus();
+		  	return false;
+		  } else if($('#form-email').val() == ''){ 
+		  	showError('Please enter your email');
+		  	$('#form-email').focus();
+		  	return false;
+		  } else if($('#form-address').val() == ''){ 
+		  	showError('Please enter your street address');
+		  	$('#form-address').focus();
+		  	return false;
+		  } else if($('#form-city').val() == ''){ 
+		  	showError('Please enter your city');
+		  	$('#form-city').focus();
+		  	return false;
+		  } else if($('#form-state').val() == ''){ 
+		  	showError('Please enter your state');
+		  	$('#form-state').focus();
+		  	return false;
+		  } else if($('#form-country').val() == ''){ 
+		  	showError('Please enter your country');
+		  	$('#form-country').focus();
+		  	return false;
+		  } else if($('#form-zip').val() == ''){ 
+		  	showError('Please enter your zip code');
+		  	$('#form-zip').focus();
+		  	return false;
+		  } else if($('#form-company').val() == ''){ 
+		  	showError('Please enter your company name');
+		  	$('#form-company').focus();
+		  	return false;
+		  } else if($('#form-comment').val() == ''){ 
+		  	showError('Please enter a comment or question');
+		  	$('#form-comment').focus();
+		  	$('#form-comment').addClass("formInvalid");
+		  	return false;
+		  } else if ($('div.checkbox-group.required :checkbox:checked').length == 0){
+			  	showError('Please check at least one industry');
+			  	$('.industry-label').css({'color':'rgba(255,0,42,1)'})
+			  	e.preventDefault();
+			  	return false;
 		  } else {
 		      document.forms["form"].submit();
 		  }
