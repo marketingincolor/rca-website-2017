@@ -1,4 +1,4 @@
-<div class="reveal" id="takeover-modal" data-reveal>
+<div class="reveal" id="takeover-modal" data-reveal data-options="closeOnBackgroundClick:false;closeOnEsc:false;">
   <div class="row">
   	<div class="small-10 medium-8 small-centered columns text-center">
   		<h1>Outsourcing Product Development Creates Quantum Leap in Resulting Product While Expediting Timeframes</h1>
@@ -7,9 +7,6 @@
   		<?php get_template_part('template-parts/section', 'learn-more-form-container-white'); ?>
   	</div>
   </div>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>
 
 <style>
