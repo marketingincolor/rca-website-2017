@@ -188,10 +188,10 @@
 		  	showError('Please enter your company name');
 		  	$('#form-company').focus();
 		  	return false;
-		  } else if($('#form-comment').val() == ''){ 
+		  } else if($('#form-comments').val() == ''){ 
 		  	showError('Please enter a comment or question');
-		  	$('#form-comment').focus();
-		  	$('#form-comment').addClass("formInvalid");
+		  	$('#form-comments').focus();
+		  	$('#form-comments').addClass("formInvalid");
 		  	return false;
 		  } else if ($('div.checkbox-group.required :checkbox:checked').length == 0){
 			  	showError('Please check at least one industry');
