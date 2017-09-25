@@ -18,7 +18,7 @@
 					    	<input type="text" name="first_name" id="" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 					    </div>
 					    <div class="large-4 columns">
-					    	<input type="text" name="phone_number" id="" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
+					    	<input type="number" name="phone_number" id="" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
 					    </div>
 					    <div class="large-4 columns">
 					 			<input type="email" name="email_address" id="" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -36,7 +36,7 @@
 					    	<input type="text" name="country" id="" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
 						<div class="large-4 columns">
-					    	<input type="text" name="zip_code" id="" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+					    	<input type="number" name="zip_code" id="" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
 						<div class="large-12 columns">
 					    	<input type="text" name="company" id="" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -61,6 +61,14 @@
 			</div>
 		</div>
 	</div>
+
+	<style>
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+		  -webkit-appearance: none; 
+		  margin: 0; 
+		}
+	</style>
 
 	<script>
 		var $form = $('#learn-more-form-container');
