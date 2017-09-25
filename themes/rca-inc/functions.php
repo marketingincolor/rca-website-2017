@@ -846,7 +846,10 @@ function get_tax_img($taxonomy, $term_id) {
   return $icon_img['url'];
 }
 
-
+function get_related_img($taxonomy, $term_id) {
+  $icon_img = get_field('related_content_icon', 'expertise_' . $term_id);
+  return $icon_img['url'];
+}
 
 class RCA_REMOVE_MENU_LINKS extends Walker_Nav_Menu {
 
@@ -1022,3 +1025,8 @@ function rca_tax_post_pagination() {
  
 }
 
+function rca_get_random_term() {
+  $terms_array = array ('case-studies', 'white-papers', 'webinars', 'published-articles', 'visual-resources');
+  $chosen_term = $terms_array[array_rand($terms_array)];
+  return $chosen_term;
+}
