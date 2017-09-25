@@ -55,8 +55,6 @@
 				</div>
 				<!-- end directors -->
 
-
-
 				<!-- directors > sales operations-->
 				<div class="row staff-block-area no-avatar text-center">
 					<h3>Sales Operations</h3>

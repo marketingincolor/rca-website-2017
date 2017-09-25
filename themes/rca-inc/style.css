@@ -20,19 +20,276 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
-#learn-more-form-container h1 {
-	margin-bottom: 7%;
+
+
+/*TODO: 
+
+1.0 Remove Slick Slider Styles
+2.0 Organize Styles
+*/
+
+
+
+
+/*--------------------------------------------------------------
+# TAXONOMY TEMPLATE
+--------------------------------------------------------------*/
+#mob-before-title-block { padding: 2rem 0rem; }
+#mobile-share-btn { color: #c4612b; border: 2px solid #c4612b; }
+#mobile-share-btn p { margin-bottom: 0rem; font-weight: bold; }
+#mobile-cat-picker select {
+	border: 2px solid #c9c3ba;
+    color: #c4612b;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 0rem 1rem;
+    text-align-last: center; 
+    height: 100%;
 }
-#learn-more-form-container .large-4,#learn-more-form-container .large-12 {
+
+#mobile-cat-picker select option {
+    color: #c4612b;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.orange-btn:hover { 
+	background-color: #c4612b; 
+	color: #fff;
+}
+
+
+
+.archive-description p { margin-bottom: 3.5rem; }
+.navigation i { color: #9d938b; }
+.navigation ul { margin-bottom: 0rem; }
+#all-items-block { padding: 4rem; }
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #2b2b2b;
+    text-decoration:none;
+}
+ 
+.navigation li {
+    display: inline;
+}
+ 
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+ 
+.navigation li a:hover,
+.navigation li.active a {
+}
+
+.pagination a { display: inline-block; }
+.page-numbers { display: inline-block; }
+
+#all-items-block { padding: 3rem 0rem; }
+.item-block button { width: auto; margin: 0 auto; display: block; margin-bottom: 3rem; margin-top: 1.5rem; }
+
+/*--------------------------------------------------------------
+# TAXONOMY MENU
+--------------------------------------------------------------*/
+#taxonomy-menu { background-color: #9d938b; color: #fff; }
+#taxonomy-menu a { color: #fff; }
+.item-block a { color: #2b2b2b; }
+.item-block a:visited { color: #2b2b2b; }
+
+
+/*--------------------------------------------------------------
+# WEBINAR TEMPLATE
+--------------------------------------------------------------*/
+#share-menu div:nth-child(1) { padding-bottom: 1rem; }
+#share-menu .title { padding: 3rem 0rem 0rem;  }
+#share-menu .close { padding: 3rem 0rem 0rem; }
+#share-menu #social-icons { padding: 1rem 0rem; }
+#share-menu i { color: #fff; }
+#share-menu h1 { color: #fff; text-align: center; }
+.share-menu-js { position: fixed; background-color: rgb(29, 56, 94); width: 100%; height: 100%; }
+
+#register-block { background-color: #236192; color: #fff; }
+#share-block { background-color: #2b2b2b; color: #fff; }
+#register-block p, #share-block p { margin-bottom: 0rem; font-size: 1rem; font-weight: bold; padding: 1.5rem 0rem; }
+
+#your-expert-presenters-label::before { display:none; }
+
+#your-expert-presenters-label { 
+	border:none !important; 
+	width: 100%; 
+	display:block; 
+	margin: 0 auto; 
+	text-align: center;
+	font-size: 1.375rem;
+	font-family: 'roboto', sans-serif;  
+}
+
+#your-expert-presenters-label i { font-size: 1rem; }
+
+.accordian-title { width: 100%; display:block; margin: 0 auto; }
+.accordian-title li { border:none !important;  }
+#presenter-accordian { margin-bottom: 0rem; }
+#presenter-accordian li { background-color: #9d938b !important; }
+#presenter-accordian a { color: #ffffff;  }
+#webinar-form-block-mobile input[type="submit"] { margin-top: .5rem; }
+#webinar-form-block-mobile { padding: 3rem 0rem; }
+#webinar-form-block-mobile #form ::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block-mobile #form ::-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block-mobile #form :-ms-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block-mobile #form :-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
+
+#webinar-form-block-mobile #form .medium-4, #webinar-form-block #form .small-12 {
 	position: relative;
 }
-#learn-more-form-container i {
+
+#webinar-form-block-mobile #form input:valid {
+	border-bottom: 1px solid #FFF;
+	color: #FFF;
+}
+
+#webinar-form-block-mobile #form i {	
 	position: absolute;
 	top: 10px;
 	left: 25px;
 	color: rgba(255,255,255,0.4);
 }
-#learn-more-form-container input {
+
+#webinar-form-block-mobile #form input[type="text"] {
+	border-radius: 0px;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	padding-left: 40px;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	color: #fff;
+}
+
+#webinar-form-block-mobile #form input[type="submit"]:hover{
+	color: #1a365d;
+	background-color: #FFF;
+}
+
+#webinar-form-block-mobile #form input[type="submit"]{
+	transition: all 0.25s ease-in-out;
+	border: 1px solid;
+	border-color: #fff;
+	border-radius: 0px;
+	background: transparent;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	font-weight:bold;
+}
+
+#webinar-form-block-mobile h1, #webinar-form-block-mobile p { color: #fff; }
+#webinar-form-block-mobile { background-color: #236192; }
+
+/*--------------------------------------------------------------
+# WEBINAR FORM ON WEBINAR TEMPLATE
+--------------------------------------------------------------*/
+#webinar-form-block #form ::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block #form ::-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block #form :-ms-input-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+#webinar-form-block #form :-moz-placeholder {
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
+
+#webinar-form-block #form .medium-4, #webinar-form-block #form .small-12 {
+	position: relative;
+}
+
+#webinar-form-block #form input:valid {
+	border-bottom: 1px solid #FFF;
+	color: #FFF;
+}
+
+#webinar-form-block #form i {	
+	position: absolute;
+	top: 10px;
+	left: 25px;
+	color: rgba(255,255,255,0.4);
+}
+
+#webinar-form-block #form input[type="text"] {
+	border-radius: 0px;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	padding-left: 40px;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	color: #fff;
+}
+
+#webinar-form-block #form input[type="submit"]:hover{
+	color: #1a365d;
+	background-color: #FFF;
+}
+
+#webinar-form-block #form input[type="submit"]{
+	transition: all 0.25s ease-in-out;
+	border: 1px solid;
+	border-color: #fff;
+	border-radius: 0px;
+	background: transparent;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	font-weight:bold;
+}
+
+
+/*--------------------------------------------------------------
+# PRE FOOTER FORM - BLUE
+--------------------------------------------------------------*/
+#learn-more-form-container-blue h1 {
+	margin-bottom: 7%;
+}
+#learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12 {
+	position: relative;
+}
+#learn-more-form-container-blue i {
+	position: absolute;
+	top: 10px;
+	left: 25px;
+	color: rgba(255,255,255,0.4);
+}
+#learn-more-form-container-blue input {
 	border-radius: 0px;
 	background-color: transparent;
 	border: none;
@@ -41,64 +298,58 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	border-bottom: 1px solid rgba(255,255,255,0.4);
 	color: rgba(255,255,255,0.4);
 }
-#learn-more-form-container input:valid{
+#learn-more-form-container-blue input:valid{
 	border-bottom: 1px solid #FFF;
 	color: #FFF;
 }
-#learn-more-form-container input[type=submit]{
+#learn-more-form-container-blue input[type=submit]{
 	transition: all 0.25s ease-in-out;
 }
-#learn-more-form-container input[type=submit]:hover{
+#learn-more-form-container-blue input[type=submit]:hover{
 	color: #1a365d;
 	background-color: #FFF;
 }
-#learn-more-form-container textarea{
+#learn-more-form-container-blue textarea{
 	resize: none;
 	border:none;
 	color: #FFF;
 	box-shadow: none;
 }
-#learn-more-form-container textarea:focus{
+#learn-more-form-container-blue textarea:focus{
 	background-color: #76869e;
 }
-#learn-more-form-container textarea:valid{
+#learn-more-form-container-blue textarea:valid{
 	border: 1px solid #FFF;
 	background-color: transparent;
 }
-#learn-more-form-container label i{
+#learn-more-form-container-blue label i{
 	position: static;
 	padding-left: 0.5rem;
 	margin-right: 0.7rem
 }
-#learn-more-form-container label{
+#learn-more-form-container-blue label{
 	color: rgba(255,255,255,0.4);
 	font-size: 1rem;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
-#learn-more-form-container ::-webkit-input-placeholder {
+#learn-more-form-container-blue ::-webkit-input-placeholder {
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
-#learn-more-form-container ::-moz-placeholder {
+#learn-more-form-container-blue ::-moz-placeholder {
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
-#learn-more-form-container :-ms-input-placeholder {
+#learn-more-form-container-blue :-ms-input-placeholder {
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
-#learn-more-form-container :-moz-placeholder {
+#learn-more-form-container-blue :-moz-placeholder {
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
 
-
-/*TODO: 
-
-1.0 Remove Slick Slider Styles
-2.0 Organize Styles
-*/
 
 #webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
 #your-expert-presenters #presenter-block:not(:last-child) { margin-bottom: 3rem; }
@@ -818,6 +1069,8 @@ a:active {
 	outline: 0;
 }
 
+#mobile-top-bar > div.small-6.columns.text-center > a { color: #fff; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -1219,9 +1472,9 @@ button {
 	border-radius: 0px; 
 	color: #c4612b; 
 	background-color: #f8f7f5; 
-	border:4px solid #c4612b; 
+	border: 2px solid #c4612b; 
 	width: 100%;
-	padding: 1rem;
+	padding: .5rem;
 }
 
 button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; }
@@ -1813,6 +2066,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 #share p { display: inline-block; }
 
+
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 	.accordian-menu > li {    
@@ -1833,6 +2088,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 	#news-all-buttons button { margin: .5rem 0rem; }
 	#news-all-buttons button { margin: .5rem 0rem; }
+	#webinar-information-block > div > div { border: none; }
 }
 
 /* Medium and up */	
@@ -1867,6 +2123,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	}
 	
 	#share p { display:none; }
+
+	#webinar-information-block > div > div:last-child { border-right: none; }
+	#webinar-information-block > div > div { border-right: 2px solid #9d938b; }
 
 }
 
@@ -1943,7 +2202,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.secondary-menu-item-wrapper { display: inline-block; width: 20%; }
+.secondary-menu-item-wrapper { display: inline-block; width: 16.6%; }
 .secondary-menu-item-wrapper li { 
 	width: 50%;
     display: inline-block;

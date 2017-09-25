@@ -7,15 +7,20 @@ global $post;
 $terms = get_the_terms($post->id, 'expertise');
 
 // Returns this term name
-$termName = $terms[0]->name;
+if($terms):
+	$termName = $terms[0]->name;
+else: 
+	$termName = '';
+endif;
+
 ?>
 
 <div class="row">
 	<div class="small-12 medium-6 columns text-center medium-text-left">
 		<div id="breadcrumbs">
-			<?php if($termName != 'Webinars'): ?>
-				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
-			<?php endif; ?>
+				<?php if($termName != 'Webinars'): ?>
+					<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+				<?php endif; ?>
 		</div>
 	</div>
 	<div class="small-12 medium-6 columns text-right show-for-medium">

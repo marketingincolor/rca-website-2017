@@ -3,15 +3,15 @@ Stylesheet:
   ./style.css/
 
 Home:
-  ☐ Get Forms Working (Mobile/Desktop) 
-  ☐ Get Sliders Working (Mobile/Desktop)
+  ✔ Get Forms Working (Mobile/Desktop) @done (17-09-24 12:28)
+  ✔ Get Sliders Working (Mobile/Desktop) @done (17-09-24 12:28)
 
 Contact:  
   ☐ Form (Mobile/Desktop) 
 
 Indivdiual Staff Page:
   ✔ Form (Mobile/Desktop) @high @done (17-09-20 15:01)
-  ☐ News Slider (Mobile Desktop) @high
+  ✔ News Slider (Mobile Desktop) @high @done (17-09-24 12:31)
 
 All Staff Members:
   ☐ Reduce Padding Around Members 
@@ -29,14 +29,14 @@ News Feed:
 
 Individual News Post: 
  ✔ Add Template @done (17-09-15 11:18)
- ☐ Mobile Page
+ ✔ Mobile Page @done (17-09-24 12:28)
 
  Privacy Policy:
  ✔ Add Page @done (17-09-15 11:27)
 
  Terms of Use:
  ✔ Add Page @done (17-09-15 11:27)
- ☐ Format 
+ ✔ Format @done (17-09-24 12:28)
 
  Pre Footer Form: 
  ✔ Programming for changing colors of bottom form. @started(17-09-15 12:52) @done (17-09-15 16:07) @lasted(3:15)
@@ -48,21 +48,25 @@ About Page:
 
 Medical Device Page:
 
- ✔ Add Page @started(17-09-16 16:45) @done (17-09-16 18:17) @lasted(1:32)
- ✔ Add Menus @done (17-09-16 18:17)
+✔ Add Page @started(17-09-16 16:45) @done (17-09-16 18:17) @lasted(1:32)
+✔ Add Menus @done (17-09-16 18:17)
 
 
 Templates:  
- ☐ Related Content
+☐ Related Content
 
  Social Links:
 
- ✔ Programming for sharing pages. @done (17-09-19 09:55)
+✔ Programming for sharing pages. @done (17-09-19 09:55)
 
  Create Templates:
 
-  ☐ Program White Paper Template
-  ☐ Program Case Study Template
-  ☐ Program Webinar Template
-  ☐ Program Published Articles Template
+✔ Program White Paper Template @done (17-09-24 12:28)
+✔ Program Case Study Template @done (17-09-24 12:28)
+✔ Program Webinar Template @done (17-09-24 12:28)
+✔ Program Published Articles Template @done (17-09-24 12:29)
+
+  Success Page:
+ ✔  Add Template @done (17-09-24 12:29)
+ 
 

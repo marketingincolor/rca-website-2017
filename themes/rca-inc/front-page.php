@@ -17,24 +17,6 @@ get_header(); ?>
 	<!-- TOP SLIDER -->
 	<section class="top-slider">
 
-			<!-- Use this php if making a custom post type for sliders -->
-			<?php
-				// Get post count of slider with home-top category
-
-				// $my_query = new WP_Query(array('post_type' => 'slider','category_name' => 'home-top'));
-				// $slider_count = $my_query->post_count;
-
-				// Query custom post type slider
-
-				// $args = array(
-				// 	'post_type' => 'slider', 
-				// 	'category_name' => 'home-top',
-				// 	'posts_per_page' => -1
-				// );
-				// $slider_query = new WP_Query( $args );
-				// while ( $slider_query->have_posts() ) : $slider_query->the_post();
-			?>
-
 		<style>
 		  .owl-carousel .item{
 		  	background-repeat: no-repeat;

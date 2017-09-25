@@ -126,5 +126,4 @@
 			  jQuery(document).foundation();
 			});
 		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/plugins/foundation.orbit.min.js"></script>
 </html>

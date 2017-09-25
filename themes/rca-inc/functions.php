@@ -841,6 +841,11 @@ function get_service_image($title) {
   return $icon_img['url'];
 }
 
+function get_tax_img($taxonomy, $term_id) {
+  $icon_img = get_field('icon', 'expertise_' . $term_id);
+  return $icon_img['url'];
+}
+
 
 
 class RCA_REMOVE_MENU_LINKS extends Walker_Nav_Menu {
@@ -894,4 +899,126 @@ class RCA_REMOVE_MENU_LINKS extends Walker_Nav_Menu {
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
+
+class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {
+
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= '<ul>';
+    }
+
+    public function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= '</ul>';
+    }
+
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = array();
+        if( !empty( $item->classes ) ) {
+            $classes = (array) $item->classes;
+        }
+
+        $active_class = '';
+        if( in_array('current-menu-item', $classes) ) {
+            $active_class = ' class="active"';
+        } else if( in_array('current-menu-parent', $classes) ) {
+            $active_class = ' class="active-parent"';
+        } else if( in_array('current-menu-ancestor', $classes) ) {
+            $active_class = ' class="active-ancestor"';
+        }
+
+        $url = '';
+        if( !empty( $item->url ) ) {
+            $url = $item->url;
+        }
+
+        // $terms = get_the_terms( get_the_ID(), 'category');
+        // var_dump($terms);
+        $image = get_field('taxonomy_image', 'case-studies');
+
+        //$image = get_field( 'taxonomy_image', $item->title);
+        //var_dump($image);
+
+        $output .= '<a href="' . $url . '"><div class="secondary-menu-item-wrapper"><span class="cat-image"><img src="' . get_cat_image($item->title) . '" /></span><li'. $active_class . '>' . $item->title . '</li></div></a>';
+    }
+
+
+    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= '</li>';
+    }
+}
+
+function rca_tax_post_pagination() {
+ 
+    if( is_singular() )
+        return;
+ 
+    global $wp_query;
+ 
+    /** Stop execution if there's only 1 page */
+    if( $wp_query->max_num_pages <= 1 )
+        return;
+ 
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
+ 
+    /** Add current page to the array */
+    if ( $paged >= 1 )
+        $links[] = $paged;
+ 
+    /** Add the pages around the current page to the array */
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+ 
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+ 
+    echo '<div class="navigation"><ul>' . "\n";
+
+    /** Previous Post Link */
+    if(!get_previous_posts_link() ):
+        printf( get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
+    else:
+        printf( get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
+    endif;   
+
+ 
+
+ 
+    /** Link to first page, plus ellipses if necessary */
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
+        
+
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
+ 
+        if ( ! in_array( 2, $links ) )
+            echo '<li>…</li>';
+    }
+ 
+    /** Link to current page, plus 2 pages in either direction if necessary */
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
+    }
+ 
+    /** Link to last page, plus ellipses if necessary */
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '<li>…</li>' . "\n";
+ 
+        $class = $paged == $max ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
+    }
+ 
+    /** Next Post Link */
+    if ( get_next_posts_link() )
+        printf( get_next_posts_link( '<i class="fa fa-angle-right" aria-hidden="true"></i>' ) );
+ 
+    echo '</ul></div>' . "\n";
+ 
+}
 
