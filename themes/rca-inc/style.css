@@ -29,6 +29,38 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 
+
+
+/*--------------------------------------------------------------
+# TAXONOMY TEMPLATE
+--------------------------------------------------------------*/
+#mob-before-title-block { padding: 2rem 0rem; }
+#mobile-share-btn { color: #c4612b; border: 2px solid #c4612b; }
+#mobile-share-btn p { margin-bottom: 0rem; font-weight: bold; }
+#mobile-cat-picker select {
+	border: 2px solid #c9c3ba;
+    color: #c4612b;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 0rem 1rem;
+    text-align-last: center; 
+    height: 100%;
+}
+
+#mobile-cat-picker select option {
+    color: #c4612b;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.orange-btn:hover { 
+	background-color: #c4612b; 
+	color: #fff;
+}
+
+
+
 .archive-description p { margin-bottom: 3.5rem; }
 .navigation i { color: #9d938b; }
 .navigation ul { margin-bottom: 0rem; }
@@ -66,14 +98,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #all-items-block { padding: 3rem 0rem; }
 .item-block button { width: auto; margin: 0 auto; display: block; margin-bottom: 3rem; margin-top: 1.5rem; }
 
-/*TAXONOMIES MENU*/
+/*--------------------------------------------------------------
+# TAXONOMY MENU
+--------------------------------------------------------------*/
 #taxonomy-menu { background-color: #9d938b; color: #fff; }
 #taxonomy-menu a { color: #fff; }
 .item-block a { color: #2b2b2b; }
 .item-block a:visited { color: #2b2b2b; }
 
 
-/*WEBINAR FORM ON WEBINAR TEMPLATE*/
+/*--------------------------------------------------------------
+# WEBINAR TEMPLATE
+--------------------------------------------------------------*/
 #share-menu div:nth-child(1) { padding-bottom: 1rem; }
 #share-menu .title { padding: 3rem 0rem 0rem;  }
 #share-menu .close { padding: 3rem 0rem 0rem; }
@@ -172,7 +208,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #webinar-form-block-mobile h1, #webinar-form-block-mobile p { color: #fff; }
 #webinar-form-block-mobile { background-color: #236192; }
 
-/*WEBINAR FORM ON WEBINAR TEMPLATE*/
+/*--------------------------------------------------------------
+# WEBINAR FORM ON WEBINAR TEMPLATE
+--------------------------------------------------------------*/
 #webinar-form-block #form ::-webkit-input-placeholder {
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
@@ -236,7 +274,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 
-/*BLUE FORM ON HOME PAGE*/
+/*--------------------------------------------------------------
+# PRE FOOTER FORM - BLUE
+--------------------------------------------------------------*/
 #learn-more-form-container-blue h1 {
 	margin-bottom: 7%;
 }

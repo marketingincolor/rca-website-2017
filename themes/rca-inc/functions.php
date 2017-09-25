@@ -1021,3 +1021,4 @@ function rca_tax_post_pagination() {
     echo '</ul></div>' . "\n";
  
 }
+

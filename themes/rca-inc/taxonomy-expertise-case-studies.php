@@ -7,6 +7,7 @@
  * @package RCA_Inc.
  */
 global $post;
+$term = $wp_query->queried_object;
 $name = 'Case Studies';
 $term_obj = get_term_by( 'name', $name, 'expertise' );
 $term_id = $term_obj->term_taxonomy_id;
@@ -17,13 +18,29 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg; ?>'); background-size: cover;">
-				<div class="featured-img-title"><h1><?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?></h1></div>
+				<div class="featured-img-title"><h1><?php the_field('taxonomy_title_in_orange_bar', $term->taxonomy . '_' . $term->term_id); ?></h1></div>
 		</div>
 	</div>
 	<!-- / Featured Image -->
 
+
+
+	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
+		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
+			<select name="mobile_category" id="">
+				<option value="Case Studies">Case Studies</option>
+				<a href="./webinars.php"></a><option value="Webinars">Webinars</option></a>
+				<option value="White Papers">White Papers</option>
+				<option value="Published Articles">Published Articles</option>
+			</select>
+		</div>
+		<div id="mobile-share-btn" class="small-2 end columns text-center" data-equalizer-watch>
+			<i class="fa fa-share" aria-hidden="true"></i>
+			<p>Share</p>
+		</div>
+	</div>
 	<!-- SOCIAL BREADCRUMBS -->
-	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+	<?php #get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="primary" class="content-area">
@@ -47,7 +64,7 @@ get_header(); ?>
 
 		if ( $case_studies->have_posts() ) : ?>
 			
-			<div class="row">
+			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
 						<?php
@@ -58,16 +75,7 @@ get_header(); ?>
 			</div>
 
 			<!-- TAXONOMIES MENU -->
-			<div id="taxonomy-menu" class="" style="padding: 1rem;">
-				<div id="taxonomy-menu" class="row">
-					<div id="" class="small-12 columns">
-						<?php wp_nav_menu( array(
-							'menu'=>'taxonomy-menu', 
-							'walker'=> new RCA_TAXONOMY_WALKER
-						) ); ?>
-					</div>
-				</div>
-			</div>
+			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
 			<!-- /TAXONOMIES MENU -->
 			
 			<div id="all-items-block" class="row">
@@ -103,6 +111,46 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<!-- HIDDEN SHARE MENU -->
+	<div id="share-menu" style="display:none;">
+		<div class="row close">
+			<div class="small-offset-10 small-2 columns">
+				<i class="fa fa-times fa-2x" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="row title">
+			<div class="small-12 columns">
+				<h1>Share This Page</h1>
+			</div>
+		</div>
+		<div id="social-icons">
+			<div class="row a2a_kit a2a_kit_size_32 a2a_default_style">
+				<div class="small-offset-2 small-8 columns">
+					<div class="small-4 columns text-center">
+						<a class="a2a_button_facebook"><i class="fa fa-facebook-square fa-3x a2a_button_facebook" aria-hidden="true"></i></a>
+					</div>
+					<div class="small-4 columns text-center">
+						<a class="a2a_button_linkedin"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+					</div>
+					<div class="small-4 columns text-center">
+						<a class="a2a_button_googleplusone"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-offset-2 small-8 columns">
+					<div class="small-6 columns text-center">
+						<a class="a2a"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>	
+					</div>
+					<div class="small-6 columns text-center">
+						<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /HIDDEN SHARE MENU -->
+
 <script>
 
 	$(document).ready(function() {
@@ -111,6 +159,47 @@ get_header(); ?>
 	});
 
 </script>
+
+	<!-- SHARE BUTTON CLICKS -->
+	<script>
+		$(document).ready(function() {
+			var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
+			var close = $('#share-menu .close');
+			logo = Math.abs(logo);
+			console.log( 'logoheight ' + logo);
+			var shareButton = $('#mobile-share-btn');
+			var shareMenu = $('#share-menu');
+
+			shareButton.on('click', function() {
+
+				// Show the Menu
+				shareMenu.show();
+				shareMenu.toggleClass('share-menu-js');
+				shareMenu.css('top', logo); 
+
+				// Disable scrolling
+				$('html, body').css( { 
+					overflow:'hidden', 
+					height: '100%'
+				});
+			});
+
+			close.on('click', function() {
+
+				//Enable scrolling
+				$('html, body').css({
+				    overflow: 'auto',
+				    height: 'auto'
+				});
+
+				// Hide the Menu
+				shareMenu.toggleClass('share-menu-js');
+				shareMenu.hide();
+			});
+
+
+		})
+	</script>
 
 <?php
 get_footer();

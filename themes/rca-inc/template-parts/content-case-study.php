@@ -18,6 +18,6 @@ $icon_img = get_field('taxonomy_feed_icon',  'expertise_' . $term_id);
 		<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
 	</div>
 	<div class="row text-center">
-		<a href="<?php the_permalink(); ?>"><button>Learn More</button></a>
+		<a href="<?php the_permalink(); ?>"><button class="orange-btn">Learn More</button></a>
 	</div>
 </div>

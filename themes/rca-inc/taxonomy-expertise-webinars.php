@@ -7,17 +7,20 @@
  * @package RCA_Inc.
  */
 global $post;
+$term = $wp_query->queried_object;
 $name = 'Webinars';
 $term_obj = get_term_by( 'name', $name, 'expertise' );
 $term_id = $term_obj->term_taxonomy_id;
 $backgroundImg = get_field('taxonomy_featured_image',  'expertise_' . $term_id);
+$page_title = get_field('taxonomy_title_in_orange_bar');
+
 get_header(); ?>
 
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg; ?>'); background-size: cover;">
-				<div class="featured-img-title"><h1><?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?></h1></div>
+				<div class="featured-img-title"><h1><?php the_field('taxonomy_title_in_orange_bar', $term->taxonomy . '_' . $term->term_id);  ?></h1></div>
 		</div>
 	</div>
 	<!-- / Featured Image -->
@@ -58,16 +61,7 @@ get_header(); ?>
 			</div>
 
 			<!-- TAXONOMIES MENU -->
-			<div id="taxonomy-menu" class="" style="padding: 1rem;">
-				<div id="taxonomy-menu" class="row">
-					<div id="" class="small-12 columns">
-						<?php wp_nav_menu( array(
-							'menu'=>'taxonomy-menu', 
-							'walker'=> new RCA_TAXONOMY_WALKER
-						) ); ?>
-					</div>
-				</div>
-			</div>
+			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
 			<!-- /TAXONOMIES MENU -->
 			
 			<div id="all-items-block" class="row">
