@@ -51,11 +51,7 @@ get_header(); ?>
 	
 
 	<!-- Related Content -->
-	<div class="row">
-		<div class="small-12 columns text-center">
-			<h4>Related Content</h4>
-		</div>
-	</div>
+	<?php echo get_template_part('template-parts/content', 'related-content'); ?>
 	<!-- /Related Content -->
 	
 	<div id="contact-learn-more-wrapper">
