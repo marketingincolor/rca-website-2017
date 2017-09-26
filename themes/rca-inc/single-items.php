@@ -20,9 +20,11 @@ get_header(); ?>
 		</main>
 	</div>
 
-	<!-- LEARN MORE -->
-	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<!-- LEARN MORE (BLUE FORM) -->
+	<?php // get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<!-- /LEARN MORE -->
+
+	<!-- BASIC CALL TO ACTION IN PLACE OF FORM -->
 
 <!-- NEWS -->
 <?php get_template_part('template-parts/section', 'news'); ?>
