@@ -7,7 +7,7 @@
 		</div>
 		<div class="row">
 			<div class="small-10 small-offset-1">
-				<form name="form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
+				<form name="blue-form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
 					    <div class="large-4 columns">
 					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 					    </div>
@@ -115,18 +115,18 @@
 	<script>
 	  // change colors on inputs to white when field is filled
 	  // out properly 
-		var $form = $('#learn-more-form-container-blue');
-		$form.find('input,textarea').on('keyup change',function(){
+		var $blueForm = $('#learn-more-form-container-blue');
+		$blueForm.find('input,textarea').on('keyup change',function(){
 
 			//change color of checkbox labels if one box is checked
-			if($('div.checkbox-group.required :checkbox:checked').length > 0){
-				$('.industry-label').css({'color':'rgba(255,255,255,1)'});
+			if($blueForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
+				$blueForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
 			}else{
-				$('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
+				$blueForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
 			}
 			//change color of checkboxes and their labels if checked
-			$('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
-			$('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
+			$blueForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
+			$blueForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
 
 			// change color of labels when their input field is valid
 			if($(this).is(":valid")){
@@ -146,60 +146,60 @@
 		}
 
 		//Don't send form if it has errors, otherwise send
-		$('#form-submit').on('click',function(e){
-		  if($('#form-first-name').val() == ''){ 
+		$blueForm.find('#form-submit').on('click',function(e){
+		  if($blueForm.find('#form-first-name').val() == ''){ 
 		  	showError('Please enter your first name');
-		  	$('#form-first-name').addClass("formInvalid");
-		  	$('#form-first-name').focus();
+		  	$blueForm.find('#form-first-name').addClass("formInvalid");
+		  	$blueForm.find('#form-first-name').focus();
 		  	return false;
-		  } else if($('#form-last-name').val() == ''){ 
+		  } else if($blueForm.find('#form-last-name').val() == ''){ 
 		  	showError('Please enter your last name');
-		  	$('#form-last-name').focus();
+		  	$blueForm.find('#form-last-name').focus();
 		  	return false;
-		  } else if($('#form-phone').val() == ''){ 
+		  } else if($blueForm.find('#form-phone').val() == ''){ 
 		  	showError('Please enter your phone number');
-		  	$('#form-phone').focus();
+		  	$blueForm.find('#form-phone').focus();
 		  	return false;
-		  } else if($('#form-email').val() == ''){ 
+		  } else if($blueForm.find('#form-email').val() == ''){ 
 		  	showError('Please enter your email');
-		  	$('#form-email').focus();
+		  	$blueForm.find('#form-email').focus();
 		  	return false;
-		  } else if($('#form-address').val() == ''){ 
+		  } else if($blueForm.find('#form-address').val() == ''){ 
 		  	showError('Please enter your street address');
-		  	$('#form-address').focus();
+		  	$blueForm.find('#form-address').focus();
 		  	return false;
-		  } else if($('#form-city').val() == ''){ 
+		  } else if($blueForm.find('#form-city').val() == ''){ 
 		  	showError('Please enter your city');
-		  	$('#form-city').focus();
+		  	$blueForm.find('#form-city').focus();
 		  	return false;
-		  } else if($('#form-state').val() == ''){ 
+		  } else if($blueForm.find('#form-state').val() == ''){ 
 		  	showError('Please enter your state');
-		  	$('#form-state').focus();
+		  	$blueForm.find('#form-state').focus();
 		  	return false;
-		  } else if($('#form-country').val() == ''){ 
+		  } else if($blueForm.find('#form-country').val() == ''){ 
 		  	showError('Please enter your country');
-		  	$('#form-country').focus();
+		  	$blueForm.find('#form-country').focus();
 		  	return false;
-		  } else if($('#form-zip').val() == ''){ 
+		  } else if($blueForm.find('#form-zip').val() == ''){ 
 		  	showError('Please enter your zip code');
-		  	$('#form-zip').focus();
+		  	$blueForm.find('#form-zip').focus();
 		  	return false;
-		  } else if($('#form-company').val() == ''){ 
+		  } else if($blueForm.find('#form-company').val() == ''){ 
 		  	showError('Please enter your company name');
-		  	$('#form-company').focus();
+		  	$blueForm.find('#form-company').focus();
 		  	return false;
-		  } else if($('#form-comments').val() == ''){ 
+		  } else if($blueForm.find('#form-comments').val() == ''){ 
 		  	showError('Please enter a comment or question');
-		  	$('#form-comments').focus();
-		  	$('#form-comments').addClass("formInvalid");
+		  	$blueForm.find('#form-comments').focus();
+		  	$blueForm.find('#form-comments').addClass("formInvalid");
 		  	return false;
-		  } else if ($('div.checkbox-group.required :checkbox:checked').length == 0){
+		  } else if ($blueForm.find('div.checkbox-group.required :checkbox:checked').length == 0){
 			  	showError('Please check at least one industry');
-			  	$('.industry-label').css({'color':'rgba(255,0,42,1)'})
+			  	$blueForm.find('.industry-label').css({'color':'rgba(255,0,42,1)'})
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		      document.forms["form"].submit();
+		      document.forms["blue-form"].submit();
 		  }
 	  });
 

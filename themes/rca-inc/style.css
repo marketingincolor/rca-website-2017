@@ -277,6 +277,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # PRE FOOTER FORM - BLUE
 --------------------------------------------------------------*/
+#takeover-modal{
+	padding: 10% 0;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -284,7 +287,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #white-error-message{color:#FFF;font-size: 18px;margin-bottom: 30px;}
 #orange-error-message{color:#c4612b;font-size: 18px;margin-bottom: 30px;}
-#learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12,#learn-more-form-container-white .large-4,#learn-more-form-container-white .large-12 {
+#learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12,#learn-more-form-container-white .large-4,#learn-more-form-container-white .large-12,
+#learn-more-form-container-white .large-6 {
 	position: relative;
 }
 #learn-more-form-container-blue i,#learn-more-form-container-white i {
