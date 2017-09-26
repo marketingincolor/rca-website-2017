@@ -1,49 +1,57 @@
 <div id="learn-more-form-container-white">
 		<div class="row" >
 			<div class="small-10 small-offset-1 columns text-center">
-				<h1>I'm interested in Learning More About RCA</h1>
 				<div id="orange-error-message"></div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="small-10 small-offset-1">
-				<form name="white-form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
-					    <div class="large-4 columns">
-					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					    	<input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					    	<input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					 			<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
-					    </div>
-						<div class="large-4 columns">
-					    	<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+			<div class="small-10 small-offset-1 columns end">
+				<form name="modal-form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
+			    <div class="row">
+			    	<div class="large-6 columns">
+			    		<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+			    	</div>
+			    	<div class="large-6 columns">
+			    		<input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+			    	</div>
+			    </div>
+			    <div class="row">
+			    	<div class="large-6 columns">
+			    		<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
+			    	</div>
+			    	<div class="large-6 columns">
+			    		<input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
+			    	</div>
+			    </div>
+					<div class="row">
+						<div class="large-6 columns">
+							<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
-						<div class="large-4 columns">
-					    	<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+						<div class="large-6 columns">
+							<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
-						<div class="large-4 columns">
+					</div>
+					<div class="row">
+						<div class="large-6 columns">
 							<input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
-						<div class="large-4 columns">
-					    	<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+						<div class="large-6 columns">
+							<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
-						<div class="large-4 columns">
-					    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+					<div class="row">
+						<div class="large-6 columns">
+				    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 						</div>
+						<div class="large-6 columns">
+				    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="row">
 						<div class="large-12 columns">
-					    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-						</div>
-						<div class="large-12 columns">
-							<label for="" class="industry-label"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
+							<label for="" class="industry-label text-left"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
 							<div class="checkbox-group required">
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a1"> Lorem Ipsum</label>
+									<label class="check-label" for="a1"> Technology</label>
 									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
 									<label class="check-label" for="a2"> Lorem Ipsum</label>
 									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
@@ -87,26 +95,33 @@
 									<input id="a17" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
 									<label class="check-label" for="a17"> Lorem Ipsum</label>
 									<input id="a18" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a18"> Lorem Ipsum</label>
+									<label class="check-label" for="a18"> Other</label>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="row">
 						<div class="large-12 columns">
-							<label for=""><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
+							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
 							<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
 						</div>
+					</div>
+					<div class="row">
 						<div class="large-6 columns">
 						  <div class="checkbox-group">
-						    <input id="agree" type="checkbox" name="agree" value="Car" checked="checked">
+						    <input id="agree" type="checkbox" name="agree" value="agree" checked="checked">
 						    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
 						  </div>
 						</div>
 						<div class="large-6 columns text-right">
 							<p>*=Required</p>
 						</div>
+					</div>
+					<div class="row">
 						<div class="large-12 columns">
-							<input type="submit" value="Submit" id="form-submit">
+							<input type="submit" value="Submit" id="form-submit-modal">
 						</div>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -115,18 +130,18 @@
 	<script>
 	  // change colors on inputs to white when field is filled
 	  // out properly 
-		var $form = $('#learn-more-form-container-white');
-		$form.find('input,textarea').on('keyup change',function(){
+		var $modalForm = $('#learn-more-form-container-white');
+		$modalForm.find('input,textarea').on('keyup change',function(){
 
 			//change color of checkbox labels if one box is checked
-			if($('div.checkbox-group.required :checkbox:checked').length > 0){
-				$('.industry-label').css({'color':'#363636'});
+			if($modalForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
+				$modalForm.find('.industry-label').css({'color':'#363636'});
 			}else{
-				$('.industry-label').css({'color':'rgba(0,0,0,0.4)'});
+				$modalForm.find('.industry-label').css({'color':'rgba(0,0,0,0.4)'});
 			}
 			//change color of checkboxes and their labels if checked
-			$('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'#363636'});
-			$('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(0,0,0,0.4'});
+			$modalForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'#363636'});
+			$modalForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(0,0,0,0.4'});
 
 			// change color of labels when their input field is valid
 			if($(this).is(":valid")){
@@ -146,60 +161,61 @@
 		}
 
 		//Don't send form if it has errors, otherwise send
-		$('#form-submit').on('click',function(e){
-		  if($('#form-first-name').val() == ''){ 
+		$modalForm.find('#form-submit-modal').on('click',function(e){
+		  if($modalForm.find('#form-first-name').val() == ''){
 		  	showError('Please enter your first name');
-		  	$('#form-first-name').addClass("formInvalid");
-		  	$('#form-first-name').focus();
+		  	$modalForm.find('#form-first-name').addClass("formInvalid");
+		  	$modalForm.find('#form-first-name').focus();
 		  	return false;
-		  } else if($('#form-last-name').val() == ''){ 
+		  } else if($modalForm.find('#form-last-name').val() == ''){ 
 		  	showError('Please enter your last name');
-		  	$('#form-last-name').focus();
+		  	$('#form-last-name').next('i').css({'color':'red'})
+		  	$modalForm.find('#form-last-name').focus();
 		  	return false;
-		  } else if($('#form-phone').val() == ''){ 
+		  } else if($modalForm.find('#form-phone').val() == ''){ 
 		  	showError('Please enter your phone number');
-		  	$('#form-phone').focus();
+		  	$modalForm.find('#form-phone').focus();
 		  	return false;
-		  } else if($('#form-email').val() == ''){ 
+		  } else if($modalForm.find('#form-email').val() == ''){ 
 		  	showError('Please enter your email');
-		  	$('#form-email').focus();
+		  	$modalForm.find('#form-email').focus();
 		  	return false;
-		  } else if($('#form-address').val() == ''){ 
+		  } else if($modalForm.find('#form-address').val() == ''){ 
 		  	showError('Please enter your street address');
-		  	$('#form-address').focus();
+		  	$modalForm.find('#form-address').focus();
 		  	return false;
-		  } else if($('#form-city').val() == ''){ 
+		  } else if($modalForm.find('#form-city').val() == ''){ 
 		  	showError('Please enter your city');
-		  	$('#form-city').focus();
+		  	$modalForm.find('#form-city').focus();
 		  	return false;
-		  } else if($('#form-state').val() == ''){ 
+		  } else if($modalForm.find('#form-state').val() == ''){ 
 		  	showError('Please enter your state');
-		  	$('#form-state').focus();
+		  	$modalForm.find('#form-state').focus();
 		  	return false;
-		  } else if($('#form-country').val() == ''){ 
+		  } else if($modalForm.find('#form-country').val() == ''){ 
 		  	showError('Please enter your country');
-		  	$('#form-country').focus();
+		  	$modalForm.find('#form-country').focus();
 		  	return false;
-		  } else if($('#form-zip').val() == ''){ 
+		  } else if($modalForm.find('#form-zip').val() == ''){ 
 		  	showError('Please enter your zip code');
-		  	$('#form-zip').focus();
+		  	$modalForm.find('#form-zip').focus();
 		  	return false;
-		  } else if($('#form-company').val() == ''){ 
+		  } else if($modalForm.find('#form-company').val() == ''){ 
 		  	showError('Please enter your company name');
-		  	$('#form-company').focus();
+		  	$modalForm.find('#form-company').focus();
 		  	return false;
-		  } else if($('#form-comments').val() == ''){ 
+		  } else if($modalForm.find('#form-comments').val() == ''){ 
 		  	showError('Please enter a comment or question');
-		  	$('#form-comments').focus();
-		  	$('#form-comments').addClass("formInvalid");
+		  	$modalForm.find('#form-comments').focus();
+		  	$modalForm.find('#form-comments').addClass("formInvalid");
 		  	return false;
-		  } else if ($('div.checkbox-group.required :checkbox:checked').length == 0){
+		  } else if ($modalForm.find('div.checkbox-group.required :checkbox:checked').length == 0){
 			  	showError('Please check at least one industry');
-			  	$('.industry-label').css({'color':'rgba(255,0,42,1)'})
+			  	$modalForm.find('.industry-label').css({'color':'rgba(255,0,42,1)'})
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		      document.forms["white-form"].submit();
+		      document.forms["modal-form"].submit();
 		  }
 	  });
 

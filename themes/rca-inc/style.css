@@ -292,19 +292,30 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # PRE FOOTER FORM - BLUE
 --------------------------------------------------------------*/
-#learn-more-form-container-blue h1 {
-	margin-bottom: 7%;
+#takeover-modal{
+	padding: 10% 0;
 }
-#learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12 {
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+#white-error-message{color:#FFF;font-size: 18px;margin-bottom: 30px;}
+#orange-error-message{color:#c4612b;font-size: 18px;margin-bottom: 30px;}
+#learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12,#learn-more-form-container-white .large-4,#learn-more-form-container-white .large-12,
+#learn-more-form-container-white .large-6 {
 	position: relative;
 }
-#learn-more-form-container-blue i {
+#learn-more-form-container-blue i,#learn-more-form-container-white i {
 	position: absolute;
 	top: 10px;
 	left: 25px;
 	color: rgba(255,255,255,0.4);
 }
-#learn-more-form-container-blue input {
+#learn-more-form-container-white i {
+	color: rgba(0,0,0,0.4);
+}
+#learn-more-form-container-blue input,#learn-more-form-container-white input {
 	border-radius: 0px;
 	background-color: transparent;
 	border: none;
@@ -313,40 +324,72 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	border-bottom: 1px solid rgba(255,255,255,0.4);
 	color: rgba(255,255,255,0.4);
 }
+#learn-more-form-container-white input {
+	border-bottom: 1px solid rgba(0,0,0,0.4);
+	color: rgba(0,0,0,0.4);
+}
+#learn-more-form-container-blue .check-label,#learn-more-form-container-white .check-label {
+	font-size: 12px;
+	text-transform: none;
+}
 #learn-more-form-container-blue input:valid{
-	border-bottom: 1px solid #FFF;
+	border-bottom: 2px solid #FFF;
 	color: #FFF;
 }
-#learn-more-form-container-blue input[type=submit]{
+#learn-more-form-container-white input:valid{
+	border-bottom: 2px solid #363636;
+	color: #363636;
+}
+#learn-more-form-container-blue input[type=submit],#learn-more-form-container-blue input[type=submit]{
 	transition: all 0.25s ease-in-out;
+}
+#learn-more-form-container-blue input[type=submit]{
+	border: 2px solid #c4612b;
 }
 #learn-more-form-container-blue input[type=submit]:hover{
 	color: #1a365d;
 	background-color: #FFF;
 }
-#learn-more-form-container-blue textarea{
+#learn-more-form-container-white input[type=submit]:hover{
+	color: #FFF;
+	background-color: #c4612b;
+}
+#learn-more-form-container-blue textarea,#learn-more-form-container-white textarea{
 	resize: none;
 	border:none;
 	color: #FFF;
 	box-shadow: none;
 }
-#learn-more-form-container-blue textarea:focus{
+#learn-more-form-container-white textarea{
+	color: #363636;
+}
+#learn-more-form-container-blue textarea{
 	background-color: #76869e;
 }
+#learn-more-form-container-white textarea{
+	background-color: #e9e7e3;
+}
 #learn-more-form-container-blue textarea:valid{
-	border: 1px solid #FFF;
+	border: 2px solid #FFF;
 	background-color: transparent;
 }
-#learn-more-form-container-blue label i{
+#learn-more-form-container-white textarea:valid{
+	border: 2px solid #363636;
+	background-color: transparent;
+}
+#learn-more-form-container-blue label i,#learn-more-form-container-white label i{
 	position: static;
 	padding-left: 0.5rem;
 	margin-right: 0.7rem
 }
-#learn-more-form-container-blue label{
+#learn-more-form-container-blue label,#learn-more-form-container-white label{
 	color: rgba(255,255,255,0.4);
 	font-size: 1rem;
 	margin-bottom: 10px;
 	text-transform: uppercase;
+}
+#learn-more-form-container-white label{
+	color: rgba(0,0,0,0.4);
 }
 #learn-more-form-container-blue ::-webkit-input-placeholder {
   color: rgba(255,255,255,0.4);
@@ -364,7 +407,67 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
-
+#learn-more-form-container-white ::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container-white ::-moz-placeholder {
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container-white :-ms-input-placeholder {
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container-white :-moz-placeholder {
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+}
+#learn-more-form-container-white input.formInvalid ::-webkit-input-placeholder {
+   color: red;
+}
+#learn-more-form-container-white input.formInvalid ::-moz-input-placeholder {
+   color: red;
+}
+#learn-more-form-container-white input.formInvalid :-moz-input-placeholder {
+   color: red;
+}
+#learn-more-form-container-white input.formInvalid ::-ms-input-placeholder {
+   color: red;
+}
+#learn-more-form-container-blue .checkbox-group label,#learn-more-form-container-white .checkbox-group label{
+	margin:0;
+	padding: 3px 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+#learn-more-form-container-blue input[type="checkbox"],#learn-more-form-container-white input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+#learn-more-form-container-blue input[type="checkbox"] + label:before,#learn-more-form-container-white input[type="checkbox"] + label:before {
+  border: 2px solid rgba(255,255,255,0.4);
+  content: "";
+  display: inline-block;
+  font: 12px/1em sans-serif;
+  height: 12px;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 12px;
+}
+#learn-more-form-container-white input[type="checkbox"] + label:before{
+	border: 2px solid rgba(0,0,0,0.4);
+}
+#learn-more-form-container-blue input[type="checkbox"]:checked + label:before,#learn-more-form-container-white input[type="checkbox"]:checked + label:before {
+  background: #fff;
+  content: "";
+  text-align: center;
+}
+#learn-more-form-container-white input[type="checkbox"]:checked + label:before{
+	background-color: #363636;
+}
 
 #webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
 #your-expert-presenters #presenter-block:not(:last-child) { margin-bottom: 3rem; }
@@ -455,27 +558,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 #learn-more-form-container-blue textarea { margin-bottom: 1rem; }
 
-#learn-more-form-container-blue [type=color]:focus, 
-#learn-more-form-container-blue [type=date]:focus, 
-#learn-more-form-container-blue [type=datetime-local]:focus, 
-#learn-more-form-container-blue [type=datetime]:focus, 
-#learn-more-form-container-blue [type=email]:focus, 
-#learn-more-form-container-blue [type=month]:focus, 
-#learn-more-form-container-blue [type=number]:focus, 
-#learn-more-form-container-blue [type=password]:focus, 
-#learn-more-form-container-blue [type=search]:focus, 
-#learn-more-form-container-blue [type=tel]:focus, 
-#learn-more-form-container-blue [type=text]:focus, 
-#learn-more-form-container-blue [type=time]:focus, 
-#learn-more-form-container-blue [type=url]:focus, 
-#learn-more-form-container-blue [type=week]:focus, textarea:focus { 
-	background-color: transparent; 
-	border: none; 
-	box-shadow: none;
-	border-bottom: 2px solid #fff; 
-}
-
-#learn-more-form-container-blue textarea:focus { background-color: #76869f; }
 
 #learn-more-form-container-blue { background-color: #1a365d; padding: 3.5rem 0rem; }
 #learn-more-form-container-blue h1 { color: white; }
@@ -518,26 +600,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #learn-more-form-container-white textarea { margin-bottom: 1rem; color: #2b2b2b; }
 #learn-more-form-container-white { padding: 2rem 0rem; }
 #learn-more-form-container-white h1 { padding: 2rem 0rem; }
-#learn-more-form-container-white [type=color]:focus, 
-#learn-more-form-container-white [type=date]:focus, 
-#learn-more-form-container-white [type=datetime-local]:focus, 
-#learn-more-form-container-white [type=datetime]:focus, 
-#learn-more-form-container-white [type=email]:focus, 
-#learn-more-form-container-white [type=month]:focus, 
-#learn-more-form-container-white [type=number]:focus, 
-#learn-more-form-container-white [type=password]:focus, 
-#learn-more-form-container-white [type=search]:focus, 
-#learn-more-form-container-white [type=tel]:focus, 
-#learn-more-form-container-white [type=text]:focus, 
-#learn-more-form-container-white [type=time]:focus, 
-#learn-more-form-container-white [type=url]:focus, 
-#learn-more-form-container-white [type=week]:focus, textarea:focus { 
-	background-color: transparent; 
-	border: none; 
-	box-shadow: none;
-	border-bottom: 2px solid #2b2b2b; 
-	color: #2b2b2b;
-}
 #learn-more-form-container-white input[type="submit"] {
 	background-color: transparent;
 	border-radius: 0px;
@@ -551,9 +613,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	color: #c4612b;
 	margin-bottom: 2rem;
 }
-
-#learn-more-form-container-blue textarea:focus { background-color: #76869f; }
-
 
 label { font-size: 1rem; padding: .5rem 0rem; }
 
